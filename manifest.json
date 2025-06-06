@@ -2,9 +2,9 @@
   "name": "Test Extension",
   "description": "none",
   "version": "1.0",
-  "manifest_version": "1.0",
+  "manifest_version": 3,
   "action": {
-    "default_pop_up": "testcode.html",
+    "default_popup": "testcode.html",
     "default_icon": "new_icon.png"
   }
 }
