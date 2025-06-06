@@ -1,6 +1,6 @@
 {
   "name": "Test Extension",
-  "description": :none,
+  "description": "none",
   "version": "1.0",
   "manifest_version": "1.0",
   "action": {
