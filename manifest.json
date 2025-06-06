@@ -1,0 +1,10 @@
+{
+  "name": "Test Extension",
+  "description": :none,
+  "version": "1.0",
+  "manifest_version": "1.0",
+  "action": {
+    "default_pop_up": "testcode.html",
+    "default_icon": "new_icon.png"
+  }
+}
