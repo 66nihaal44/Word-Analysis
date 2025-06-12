@@ -5,4 +5,5 @@ if(article){
   const wordIt = text.matchAll(countWordEx);
   const wordArr = [...wordIt];
   const wordCount = wordArr.length;
+  wordArr.sort((a, b) => a.localeCompare(b));
 }
