@@ -2,6 +2,7 @@ const article = document.querySelector("article");
 if(article){
   const text = article.textContent;
   const countWordEx = /[^\s]+/g;
-  const wordBD = text.matchAll(countWordEx);
-  const wordCount = [...wordBD].length;
+  const wordIt = text.matchAll(countWordEx);
+  const wordArr = [...wordIt];
+  const wordCount = wordArr.length;
 }
