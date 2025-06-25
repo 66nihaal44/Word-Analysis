@@ -8,3 +8,13 @@
     "default_icon": "new_icon.png"
   }
 }
+{
+  "content_scripts": [
+    {
+      "js": ["wordanalyze.js"],
+      "matches": [
+        "https://developer.chrome.com/docs/extensions/*"
+      ]
+    }
+  ]
+}
