@@ -7,8 +7,7 @@
     "default_popup": "testcode.html",
     "default_icon": "new_icon.png"
   }
-}
-{
+  {
   "content_scripts": [
     {
       "js": ["wordanalyze.js"],
@@ -17,4 +16,5 @@
       ]
     }
   ]
+  }
 }
