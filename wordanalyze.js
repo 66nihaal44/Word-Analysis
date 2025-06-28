@@ -1,6 +1,6 @@
 const article = document.querySelector("article");
 if(article){
-  const woCou = getElementById("wCount");
+  const woCou = document.getElementById("wCount");
   const text = article.textContent;
   const countWordEx = /[^\s]+/g;
   const wordIt = text.matchAll(countWordEx);
