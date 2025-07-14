@@ -1,7 +1,10 @@
-const article = document.querySelector("article");
-const text = article.textContent;
 const woCou = document.getElementById("wCount");
-if(article){
+function dispWordCount(article){
+  if (!article){
+    console.log("no article");
+    return;
+  }
+  const text = article.textContent;
   const countWordEx = /[^\s]+/g;
   const wordIt = text.matchAll(countWordEx);
   const wordArr = [...wordIt];
@@ -9,3 +12,4 @@ if(article){
   woCou.textcontent = wordCount;
   wordArr.sort((a, b) => a.localeCompare(b));
 }
+dispWordCount(document.querySelector("article"));
