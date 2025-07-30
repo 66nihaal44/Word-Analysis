@@ -10,6 +10,7 @@
   "background": {
     "service_worker": "bgtest.js"
   },
+  "permissions": ["activeTab"],
   "content_scripts": [
     {
       "js": ["wordanalyze.js"],
