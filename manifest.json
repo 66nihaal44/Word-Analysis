@@ -7,6 +7,9 @@
     "default_popup": "testcode.html",
     "default_icon": "new_icon.png"
   },
+  "background": {
+    "service_worker": "bgtest.js"
+  },
   "content_scripts": [
     {
       "js": ["wordanalyze.js"],
