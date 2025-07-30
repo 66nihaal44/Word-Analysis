@@ -3,3 +3,14 @@ chrome.runtime.onInstalled.addListener(() => {
     text: "OFF",
   });
 });
+const extensions = 'https://developer.chrome.com/docs/extensions';
+chrome.action.onClicked.addListener(async (tab) => {
+  if(tab.url.startsWith(extensions)){
+    const prev = await chrome.action.getBadgeText({ tabId: tab.id });
+    const next = prev === 'ON' ? 'OFF';
+    await chrome.action.setBadgeText({
+      tabId: tab.id,
+      text: next,
+    });
+  }
+});
