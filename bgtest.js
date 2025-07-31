@@ -1,3 +1,5 @@
+import './bgtestomnibox.js';
+import './bgtesttips.js';
 chrome.runtime.onInstalled.addListener(() => {
   chrome.action.setBadgeText({
     text: "OFF",
