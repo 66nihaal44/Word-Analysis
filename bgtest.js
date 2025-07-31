@@ -12,5 +12,11 @@ chrome.action.onClicked.addListener(async (tab) => {
       tabId: tab.id,
       text: next,
     });
+    if (next === 'ON'){
+      await.chrome.scripting.executeScript({
+        files: [wordanalyze.js],
+        target: { tabId: tab.id },
+      });
+    }
   }
 });
