@@ -8,7 +8,8 @@
     "default_icon": "new_icon.png"
   },
   "background": {
-    "service_worker": "bgtest.js"
+    "service_worker": "bgtest.js",
+    "type": "module"
   },
   "permissions": ["activeTab", "scripting"],
   "commands": {
