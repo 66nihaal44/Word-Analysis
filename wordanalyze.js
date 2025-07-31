@@ -10,7 +10,7 @@ function dispWordCount(article){
     //wordArr.sort((a, b) => a.localeCompare(b));
     const badge = document.createElement("p");
     badge.classList.add("color-secondary-text", "type--caption");
-    badge.textContent = `Word Count: ${wordCount)`;
+    badge.textContent = `Word Count: ${wordCount}`;
     const heading = article.querySelector("h1");
     const date = article.querySelector("time")?.parentNode;
     (date ?? heading).insertAdjacentElement("afterend", badge);
