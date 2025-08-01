@@ -15,7 +15,7 @@ chrome.action.onClicked.addListener(async (tab) => {
       text: next,
     });
     if (next === 'ON'){
-      await.chrome.scripting.executeScript({
+      await chrome.scripting.executeScript({
         files: [wordanalyze.js],
         target: { tabId: tab.id },
       });
