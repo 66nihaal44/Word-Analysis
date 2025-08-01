@@ -1,1 +1,1 @@
-console.log(bgtestomnibox.js);
+console.log("bgtestomnibox.js");
