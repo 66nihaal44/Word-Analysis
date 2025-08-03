@@ -11,7 +11,7 @@
     "service_worker": "bgtest.js",
     "type": "module"
   },
-  "permissions": ["activeTab", "scripting", "storage", "alarms"],
+  "permissions": ["activeTab", "scripting", "storage", "alarms", "tabGroups"],
   "host_permissions": [
     "https://developer.chrome.com/*"
   ],
