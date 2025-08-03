@@ -19,7 +19,7 @@
       }
     }
   },
-  "minimum_chrome_extension": "102",
+  "minimum_chrome_version": "102",
   "omnibox": {
     "keyword": "api"
   },
