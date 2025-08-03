@@ -1,8 +1,22 @@
-<html>
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
   <body>
     <h1>Test of Test Extension</h1>
     <p>Word Count: </p> <p id="wCount"></p>
-    <script src="smplscrp.js"></script>
+    <template id="li_template">
+      <li>
+        <a>
+          <h3 class="title">Title</h3>
+          <p class="pathname">Pathname</p>
+        </a>
+      </li>
+    </template>
+    <h1>Dev Docs</h1>
+    <button>Group Tabs</button>
+    <ul></ul>
+    <script src="wordanalyze.js" type="module"></script>
   </body>
-  <script src="wordanalyze.js"></script>
 </html>
