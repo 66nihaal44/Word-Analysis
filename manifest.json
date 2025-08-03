@@ -12,6 +12,9 @@
     "type": "module"
   },
   "permissions": ["activeTab", "scripting", "storage", "alarms"],
+  "host_permissions": [
+    "https://developer.chrome.com/*"
+  ],
   "commands": {
     "_execute_action": {
       "suggested_key": {
