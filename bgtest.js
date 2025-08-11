@@ -8,6 +8,6 @@ function createContextMenu(){
 chrome.runtime.onInstalled.addListener(() => {
     createContextMenu();
 });
-chrome.contextMenus.onClicked.addListener((tab) =>  {
+chrome.contextMenus.onClicked.addListener((data, tab) =>  {
   chrome.sidePanel.open({tabId: tab.id});
 });
