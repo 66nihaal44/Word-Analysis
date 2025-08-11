@@ -11,10 +11,7 @@
     "service_worker": "bgtest.js",
     "type": "module"
   },
-  "permissions": ["activeTab", "scripting", "storage", "alarms", "tabGroups"],
-  "host_permissions": [
-    "https://developer.chrome.com/*"
-  ],
+  "permissions": ["activeTab", "storage", "contextMenus"],
   "commands": {
     "_execute_action": {
       "suggested_key": {
@@ -25,13 +22,5 @@
   "minimum_chrome_version": "102",
   "omnibox": {
     "keyword": "api"
-  },
-  "content_scripts": [
-    {
-      "js": ["wordanalyze.js"],
-      "matches": [
-        "https://developer.chrome.com/docs/extensions/*"
-      ]
-    }
-  ]
+  }
 }
