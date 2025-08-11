@@ -4,8 +4,11 @@
   "version": "1.0",
   "manifest_version": 3,
   "action": {
-    "default_popup": "testcode.html",
-    "default_icon": "new_icon.png"
+    "default_popup": "testcode.html"
+  },
+  "icons": {
+    "128": "new_icon.png"
+    "16": "new_icon.png"
   },
   "background": {
     "service_worker": "bgtest.js"
@@ -13,12 +16,5 @@
   "permissions": ["activeTab", "storage", "contextMenus", "sidePanel"],
   "side_panel": {
     "default_path": "testpanel.html"
-  },
-  "commands": {
-    "_execute_action": {
-      "suggested_key": {
-        "default": "Alt+C"
-      }
-    }
   }
 }
