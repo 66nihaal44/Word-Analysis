@@ -1,24 +1,12 @@
-import './bgtestomnibox.js';
-import './bgtesttips.js';
+function createContextMenu(){
+  chrome.contextMenus.create({
+    id: "openPanel",
+    title: "Analyze",
+    contexts: ['selection']
+}
 chrome.runtime.onInstalled.addListener(() => {
-  chrome.action.setBadgeText({
-    text: "OFF",
-  });
+    createContextMenu();
 });
-const extensions = 'https://developer.chrome.com/docs/extensions';
-chrome.action.onClicked.addListener(async (tab) => {
-  if(tab.url.startsWith(extensions)){
-    const prev = await chrome.action.getBadgeText({ tabId: tab.id });
-    const next = prev === 'ON' ? 'OFF' : 'ON';
-    await chrome.action.setBadgeText({
-      tabId: tab.id,
-      text: next,
-    });
-    if (next === 'ON'){
-      await chrome.scripting.executeScript({
-        files: [wordanalyze.js],
-        target: { tabId: tab.id },
-      });
-    }
-  }
+chrome.contextMenus.onClicked.addListener((tab) =>  {
+  chrome.sidePanel.open({tabId: tab.id});
 });
