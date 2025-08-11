@@ -7,7 +7,7 @@
     "default_popup": "testcode.html"
   },
   "icons": {
-    "128": "new_icon.png"
+    "128": "new_icon.png",
     "16": "new_icon.png"
   },
   "background": {
