@@ -13,16 +13,12 @@
   "permissions": ["activeTab", "storage", "contextMenus", "sidePanel"],
   "side_panel": {
     "default_path": "testpanel.html"
-  }
+  },
   "commands": {
     "_execute_action": {
       "suggested_key": {
         "default": "Alt+C"
       }
     }
-  },
-  "minimum_chrome_version": "102",
-  "omnibox": {
-    "keyword": "api"
   }
 }
