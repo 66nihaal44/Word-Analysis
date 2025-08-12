@@ -1,5 +1,6 @@
 function showText(text){
   if(text){
+    console.log("showText function called.");
     document.querySelector(`text`).innerText = text;
   }
 }
