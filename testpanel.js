@@ -1,3 +1,4 @@
+console.log("testpanel.js");
 function showText(text){
   if(text){
     console.log("showText function called.");
