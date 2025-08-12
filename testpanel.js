@@ -1,12 +1,13 @@
 console.log("testpanel.js");
 function showText(text){
+  console.log("showText function called.");
   if(text){
     const countWordEx = /[^\s]+/g;
     const wordIt = text.matchAll(countWordEx);
     const wordArr = [...wordIt];
     const wordCount = wordArr.length;
-    //wordArr.sort((a, b) => a.localeCompare(b));
-    console.log("showText function called.");
+    wordArr.sort();
+    console.log(wordArr);
     document.querySelector(`#text`).innerText = wordCount;
   }
 }
