@@ -5,9 +5,9 @@ function showText(text){
     const wordIt = text.matchAll(countWordEx);
     const wordArr = [...wordIt];
     const wordCount = wordArr.length;
-    wordArr.sort((a, b) => a.localeCompare(b));
+    //wordArr.sort((a, b) => a.localeCompare(b));
     console.log("showText function called.");
-    document.querySelector(`text`).innerText = wordCount;
+    document.querySelector(`#text`).innerText = wordCount;
   }
 }
 chrome.storage.session.get('hlText', ({hlText}) => {
@@ -15,6 +15,6 @@ chrome.storage.session.get('hlText', ({hlText}) => {
 });
 chrome.storage.session.onChanged.addListener((changes) => {
   if(changes['hlText']){
-    showText(changes['#hlText'].newValue);
+    showText(changes['hlText'].newValue);
   }
 })
