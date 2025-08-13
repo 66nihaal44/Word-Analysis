@@ -16,7 +16,12 @@ function showText(text){
       }
     }
     console.log(frq);
-    document.querySelector(`#text`).innerText = wordCount;
+    for(var i = 0; i < frq.length; ++i){
+      newFrq = document.createElement('li');
+      newFrq.innerText = frq[i][0] + ": ";
+      newFrq.innerText = frq[i][0] + ": " + frq[i][1];
+      document.querySelector(`#frqList`).appendChild(newFrq);
+    }
   }
 }
 chrome.storage.session.get('hlText', ({hlText}) => {
