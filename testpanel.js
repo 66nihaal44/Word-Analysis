@@ -1,7 +1,11 @@
 console.log("testpanel.js");
+const frqList = document.querySelector(`#frqList`);
 function showText(text){
   console.log("showText function called.");
   if(text){
+    while(frqList.firstChild){
+      frqList.removeChild(frqList.firstChild));
+    }
     const countWordEx = /[^\s]+/g;
     const wordIt = text.matchAll(countWordEx);
     const wordArr = [...wordIt];
@@ -20,7 +24,7 @@ function showText(text){
       newFrq = document.createElement('li');
       newFrq.innerText = frq[i][0] + ": ";
       newFrq.innerText = frq[i][0] + ": " + frq[i][1];
-      document.querySelector(`#frqList`).appendChild(newFrq);
+      frqList.appendChild(newFrq);
     }
   }
 }
