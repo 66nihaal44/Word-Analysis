@@ -8,8 +8,8 @@ function showText(text){
     const wordCount = wordArr.length;
     const frq = [];
     wordArr.sort();
-    for(var i = 0; i < wordCount; ++i){
-      var j = i, k = 1;
+    for(var i = 0, var j = 0; i < wordCount; ++i, ++j){
+      var k = 1;
       while(i < wordCount - 1 && wordArr[i + 1][0] === wordArr[i][0]){
         ++i;
         ++k;
