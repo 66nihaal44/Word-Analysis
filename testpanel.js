@@ -6,7 +6,7 @@ function showText(text){
     const wordIt = text.matchAll(countWordEx);
     const wordArr = [...wordIt];
     const wordCount = wordArr.length;
-    const frq;
+    const frq = [];
     wordArr.sort();
     for(var i = 0; i < wordCount; ++i){
       var j = i, k = 0;
@@ -14,7 +14,7 @@ function showText(text){
         ++i;
         ++k;
       }
-      frq[j] = {wordArr[j], k};
+      frq[j] = [wordArr[j], k];
     }
     console.log(frq);
     document.querySelector(`#text`).innerText = wordCount;
