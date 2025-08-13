@@ -6,8 +6,17 @@ function showText(text){
     const wordIt = text.matchAll(countWordEx);
     const wordArr = [...wordIt];
     const wordCount = wordArr.length;
+    const frq;
     wordArr.sort();
-    console.log(wordArr);
+    for(var i = 0; i < wordCount; ++i){
+      var j = i, k = 0;
+      while(i < wordCount - 1 && wordArr[i + 1] === wordArr[i]){
+        ++i;
+        ++k;
+      }
+      frq[j] = {wordArr[j], k};
+    }
+    console.log(frq);
     document.querySelector(`#text`).innerText = wordCount;
   }
 }
