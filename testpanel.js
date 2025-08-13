@@ -9,7 +9,7 @@ function showText(text){
     const frq = [];
     wordArr.sort();
     for(var i = 0; i < wordCount; ++i){
-      var j = i, k = 0;
+      var j = i, k = 1;
       while(i < wordCount - 1 && wordArr[i + 1] === wordArr[i]){
         ++i;
         ++k;
