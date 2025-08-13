@@ -9,12 +9,11 @@ function showText(text){
     const frq = [];
     wordArr.sort();
     for(var i = 0, var j = 0; i < wordCount; ++i, ++j){
-      var k = 1;
+      frq[j] = [wordArr[i][0], 1];
       while(i < wordCount - 1 && wordArr[i + 1][0] === wordArr[i][0]){
         ++i;
-        ++k;
+        ++frq[j][1];
       }
-      frq[j] = [wordArr[j][0], k];
     }
     console.log(frq);
     document.querySelector(`#text`).innerText = wordCount;
