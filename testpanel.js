@@ -19,7 +19,7 @@ function showText(text){
         ++frq[j][1];
       }
     }
-    frq.sort(function(a, b){return a[1]-b[1]});
+    frq.sort(function(a, b){return b[1]-a[1]});
     console.log(frq);
     for(var i = 0; i < frq.length; ++i){
       newFrq = document.createElement('li');
