@@ -10,11 +10,11 @@ function showText(text){
     wordArr.sort();
     for(var i = 0; i < wordCount; ++i){
       var j = i, k = 1;
-      while(i < wordCount - 1 && wordArr[i + 1] === wordArr[i]){
+      while(i < wordCount - 1 && wordArr[i + 1][0] === wordArr[i][0]){
         ++i;
         ++k;
       }
-      frq[j] = [wordArr[j], k];
+      frq[j] = [wordArr[j][0], k];
     }
     console.log(frq);
     document.querySelector(`#text`).innerText = wordCount;
