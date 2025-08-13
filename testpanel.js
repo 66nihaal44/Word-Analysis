@@ -4,7 +4,7 @@ function showText(text){
   console.log("showText function called.");
   if(text){
     while(frqList.firstChild){
-      frqList.removeChild(frqList.firstChild));
+      frqList.removeChild(frqList.firstChild);
     }
     const countWordEx = /[^\s]+/g;
     const wordIt = text.matchAll(countWordEx);
