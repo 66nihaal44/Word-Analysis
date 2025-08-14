@@ -10,7 +10,7 @@ function showText(text){
     const wordIt = text.matchAll(countWordEx);
     const wordArr = [...wordIt];
     const wordCount = wordArr.length;
-    const frq = [];
+    const frq = [], dispWords = [], dispFrq = [];
     wordArr.sort();
     for(var i = 0, j = 0; i < wordCount; ++i, ++j){
       frq[j] = [wordArr[i][0], 1];
@@ -21,12 +21,40 @@ function showText(text){
     }
     frq.sort(function(a, b){return b[1]-a[1]});
     console.log(frq);
-    for(var i = 0; i < frq.length; ++i){
+    for(var i = 0; i < 25 && i < frq.length; ++i){
+      dispWords[i] = frq[i][0];
+      dispFrq[i] = frq[i][1];
+    }
+    new Chart("frqChart", {
+      type: "bar",
+      data: {
+        labels: dispWords,
+        datasets: [{
+          backgroundColor: "red",
+          data: dispFrq
+        }]
+      },
+      options: {
+        legend: {display: false},
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        },
+        title: {
+          display: true,
+          text: "Frequency of Words"
+        }
+      }
+    });
+    /*for(var i = 0; i < frq.length; ++i){
       newFrq = document.createElement('li');
       newFrq.innerText = frq[i][0] + ": ";
       newFrq.innerText = frq[i][0] + ": " + frq[i][1];
       frqList.appendChild(newFrq);
-    }
+    }*/
   }
 }
 chrome.storage.session.get('hlText', ({hlText}) => {
