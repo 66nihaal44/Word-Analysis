@@ -1,4 +1,5 @@
 console.log("testpanel.js");
+import './cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js';
 //const frqList = document.querySelector(`#frqList`);
 function showText(text){
   console.log("showText function called.");
