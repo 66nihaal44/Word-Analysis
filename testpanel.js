@@ -1,5 +1,6 @@
 console.log("testpanel.js");
-const frqList = document.querySelector(`#frqList`);
+//const frqList = document.querySelector(`#frqList`);
+const dispWords = [], dispFrq = []
 function showText(text){
   console.log("showText function called.");
   if(text){
@@ -10,7 +11,7 @@ function showText(text){
     const wordIt = text.matchAll(countWordEx);
     const wordArr = [...wordIt];
     const wordCount = wordArr.length;
-    const frq = [], dispWords = [], dispFrq = [];
+    const frq = [];
     wordArr.sort();
     for(var i = 0, j = 0; i < wordCount; ++i, ++j){
       frq[j] = [wordArr[i][0], 1];
