@@ -3,9 +3,9 @@ const frqList = document.querySelector(`#frqList`);
 function showText(text){
   console.log("showText function called.");
   if(text){
-    while(frqList.firstChild){
+    /*while(frqList.firstChild){
       frqList.removeChild(frqList.firstChild);
-    }
+    }*/
     const countWordEx = /[^\s]+/g;
     const wordIt = text.matchAll(countWordEx);
     const wordArr = [...wordIt];
