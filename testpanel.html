@@ -1,32 +1,6 @@
 <!DOCTYPE html>
 <html lang = "en">
   <script src="cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-  <script>
-      new Chart("frqChart", {
-      type: "bar",
-      data: {
-        labels: dispWords,
-        datasets: [{
-          backgroundColor: "red",
-          data: dispFrq
-        }]
-      },
-      options: {
-        legend: {display: false},
-        scales: {
-          yAxes: [{
-            ticks: {
-              beginAtZero: true
-            }
-          }]
-        },
-        title: {
-          display: true,
-          text: "Frequency of Words"
-        }
-      }
-    });
-    </script>
   <head>
   </head>
   <body>
