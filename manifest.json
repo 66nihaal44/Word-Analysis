@@ -11,7 +11,7 @@
     "16": "new_icon.png"
   },
   "content_scripts": [
-      "chart.js",
+      "Chart.js",
       "testpanel.js"
     ],
   "background": {
