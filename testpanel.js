@@ -1,3 +1,4 @@
+const dispWords = [], dispFrq = [];
 console.log("testpanel.js");
 //const frqList = document.querySelector(`#frqList`);
 function showText(text){
@@ -10,7 +11,7 @@ function showText(text){
     const wordIt = text.matchAll(countWordEx);
     const wordArr = [...wordIt];
     const wordCount = wordArr.length;
-    const frq = [], dispWords = [], dispFrq = [];
+    const frq = [];
     wordArr.sort();
     for(var i = 0, j = 0; i < wordCount; ++i, ++j){
       frq[j] = [wordArr[i][0], 1];
@@ -25,30 +26,6 @@ function showText(text){
       dispWords[i] = frq[i][0];
       dispFrq[i] = frq[i][1];
     }
-    new Chart("frqChart", {
-      type: "bar",
-      data: {
-        labels: dispWords,
-        datasets: [{
-          backgroundColor: "red",
-          data: dispFrq
-        }]
-      },
-      options: {
-        legend: {display: false},
-        scales: {
-          yAxes: [{
-            ticks: {
-              beginAtZero: true
-            }
-          }]
-        },
-        title: {
-          display: true,
-          text: "Frequency of Words"
-        }
-      }
-    });
     /*for(var i = 0; i < frq.length; ++i){
       newFrq = document.createElement('li');
       newFrq.innerText = frq[i][0] + ": ";
