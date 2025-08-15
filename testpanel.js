@@ -25,30 +25,6 @@ function showText(text){
       dispWords[i] = frq[i][0];
       dispFrq[i] = frq[i][1];
     }
-    new Chart("frqChart", {
-      type: "bar",
-      data: {
-        labels: dispWords,
-        datasets: [{
-          backgroundColor: "red",
-          data: dispFrq
-        }]
-      },
-      options: {
-        legend: {display: false},
-        scales: {
-          yAxes: [{
-            ticks: {
-              beginAtZero: true
-            }
-          }]
-        },
-        title: {
-          display: true,
-          text: "Frequency of Words"
-        }
-      }
-    });
     /*for(var i = 0; i < frq.length; ++i){
       newFrq = document.createElement('li');
       newFrq.innerText = frq[i][0] + ": ";
