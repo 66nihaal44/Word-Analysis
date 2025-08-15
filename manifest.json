@@ -10,11 +10,11 @@
     "128": "new_icon.png",
     "16": "new_icon.png"
   },
-  "background": {
-    "scripts": [
+  "content_scripts": [
       "chart.js",
       "testpanel.js"
     ],
+  "background": {
     "service_worker": "bgtest.js",
     "type": "module"
   },
