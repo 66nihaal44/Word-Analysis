@@ -11,18 +11,11 @@
     "16": "new_icon.png"
   },
   "background": {
-    "service_worker": "bgtest.js"
+    "service_worker": "bgtest.js",
+    "type": "module"
   },
   "permissions": ["storage", "contextMenus", "sidePanel"],
   "side_panel": {
     "default_path": "testpanel.html"
-  },
-  "sandbox": {
-    "pages": [
-      "testpanel.html"
-    ]
-  },
-  "content_security_policy": {
-    "sandbox": "sandbox allow-scripts; script-src 'unsafe-inline' https://cdn.jsdelivr.net"
   }
 }
