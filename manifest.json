@@ -13,7 +13,7 @@
   "content_scripts": [
       "Chart.js",
       "testpanel.js"
-    ],
+  ],
   "background": {
     "service_worker": "bgtest.js",
     "type": "module"
