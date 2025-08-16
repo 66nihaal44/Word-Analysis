@@ -10,16 +10,14 @@
     "128": "new_icon.png",
     "16": "new_icon.png"
   },
-  "content_scripts": [
-      "Chart.js",
-      "testpanel.js"
-  ],
   "background": {
-    "service_worker": "bgtest.js",
-    "type": "module"
+    "service_worker": "bgtest.js"
   },
   "permissions": ["storage", "contextMenus", "sidePanel"],
   "side_panel": {
     "default_path": "testpanel.html"
+  },
+  "sandbox": {
+    "pages": ["testpanel.html"]
   }
 }
