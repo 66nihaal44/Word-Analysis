@@ -46,7 +46,7 @@ function showText(text){
         },
         title: {
           display: true,
-          text: "Frequency of Words"
+          text: "Top 25 Most Frequent Words"
         }
       }
     });
