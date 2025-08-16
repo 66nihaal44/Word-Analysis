@@ -26,7 +26,8 @@ function showText(text){
       dispWords[i] = frq[i][0];
       dispFrq[i] = frq[i][1];
     }
-    new Chart("frqChart", {
+    var chrt = document.getElementById("frqChart").getContext('2d');
+    var myChart new Chart(chrt, {
       type: "bar",
       data: {
         labels: dispWords,
