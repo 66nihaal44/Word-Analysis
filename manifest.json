@@ -16,8 +16,5 @@
   "permissions": ["storage", "contextMenus", "sidePanel"],
   "side_panel": {
     "default_path": "testpanel.html"
-  },
-  "sandbox": {
-    "pages": ["testpanel.html"]
   }
 }
