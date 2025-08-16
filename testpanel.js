@@ -1,7 +1,7 @@
 const dispWords = [], dispFrq = [];
 console.log("testpanel.js");
 //const frqList = document.querySelector(`#frqList`);
-function showText(text){
+function calcFrq(text){
   console.log("showText function called.");
   if(text){
     /*while(frqList.firstChild){
@@ -22,47 +22,50 @@ function showText(text){
     }
     frq.sort(function(a, b){return b[1]-a[1]});
     console.log(frq);
-    for(var i = 0; i < 25 && i < frq.length; ++i){
-      dispWords[i] = frq[i][0];
-      dispFrq[i] = frq[i][1];
-    }
-    new Chart(document.getElementById("frqChart").getContext('2d'), {
-      type: "bar",
-      data: {
-        labels: dispWords,
-        datasets: [{
-          backgroundColor: "red",
-          data: dispFrq
-        }]
-      },
-      options: {
-        legend: {display: false},
-        scales: {
-          yAxes: [{
-            ticks: {
-              beginAtZero: true
-            }
-          }]
-        },
-        title: {
-          display: true,
-          text: "Top 25 Most Frequent Words"
-        }
-      }
-    });
-    /*for(var i = 0; i < frq.length; ++i){
-      newFrq = document.createElement('li');
-      newFrq.innerText = frq[i][0] + ": ";
-      newFrq.innerText = frq[i][0] + ": " + frq[i][1];
-      frqList.appendChild(newFrq);
-    }*/
+    showFrq(frq);
   }
 }
+function showFrq(frq){
+  for(var i = 0; i < 25 && i < frq.length; ++i){
+      dispWords[i] = frq[i][0];
+      dispFrq[i] = frq[i][1];
+  }
+  new Chart(document.getElementById("frqChart").getContext('2d'), {
+    type: "bar",
+    data: {
+      labels: dispWords,
+      datasets: [{
+      backgroundColor: "red",
+      data: dispFrq
+      }]
+    },
+    options: {
+      legend: {display: false},
+      scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        }
+      }]
+    },
+    title: {
+      display: true,
+      text: "Top 25 Most Frequent Words"
+    }
+  }
+  });
+   /*for(var i = 0; i < frq.length; ++i){
+    newFrq = document.createElement('li');
+    newFrq.innerText = frq[i][0] + ": ";
+    newFrq.innerText = frq[i][0] + ": " + frq[i][1];
+    frqList.appendChild(newFrq);
+    }*/
+}
 chrome.storage.session.get('hlText', ({hlText}) => {
-  showText(hlText);
+  calcFrq(hlText);
 });
 chrome.storage.session.onChanged.addListener((changes) => {
   if(changes['hlText']){
-    showText(changes['hlText'].newValue);
+    calcFrq(changes['hlText'].newValue);
   }
 })
