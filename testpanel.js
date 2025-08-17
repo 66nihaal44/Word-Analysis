@@ -1,8 +1,12 @@
 const frq = [];
+var numWord = document.getElementById("wordNum").value;
+var excluFu = document.getElementById("excFunc").value == "on" ? true 
+                                                               : false;
+const functionWords = [];
 console.log("testpanel.js");
 //const frqList = document.querySelector(`#frqList`);
 function calcFrq(text){
-  console.log("showText function called.");
+  console.log("calcFrq function called.");
   if(text){
     /*while(frqList.firstChild){
       frqList.removeChild(frqList.firstChild);
@@ -12,26 +16,25 @@ function calcFrq(text){
     const wordArr = [...wordIt];
     const wordCount = wordArr.length;
     wordArr.sort();
-    frq.length = 0;
-    for(var i = 0, j = 0; i < wordCount; ++i, ++j){
+    getFrq(excluFu);
+    showFrq(numWord);
+  }
+}
+function getFrq(excFu){
+  frq.length = 0;
+  for(var i = 0, j = 0; i < wordCount; ++i, ++j){
+      if(excFu && functionWords.indexOf(wordArr[i][0].toLowerCase)){
+        ++i;
+      }
       frq[j] = [wordArr[i][0], 1];
       while(i < wordCount - 1 && wordArr[i + 1][0] === wordArr[i][0]){
         ++i;
         ++frq[j][1];
       }
-    }
-    frq.sort(function(a, b){return b[1]-a[1]});
-    console.log(frq);
-    var numWord = document.getElementById("wordNum").value;
-    showFrq(numWord);
   }
+  frq.sort(function(a, b){return b[1]-a[1]});
+  console.log(frq);
 }
-document.addEventListener('DOMContentLoaded', function() {
-  var wordNum = document.getElementById("wordNum");
-  wordNum.addEventListener('change', function(){
-    showFrq(wordNum.value);
-  });
-});
 function showFrq(wNum){
   const dispWords = [], dispFrq = [];
   for(var i = 0; i < wNum && i < frq.length; ++i){
@@ -69,6 +72,23 @@ function showFrq(wNum){
     frqList.appendChild(newFrq);
     }*/
 }
+document.addEventListener('DOMContentLoaded', function() {
+  var wordNum = document.getElementById("wordNum");
+  wordNum.addEventListener('change', function(){
+    var numWord = document.getElementById("wordNum").value;
+    showFrq(numWord);
+  });
+});
+// check if 'change' is right for checkbox
+document.addEventListener('DOMContentLoaded', function() {
+  var excFunc = document.getElementById("excFunc");
+  excFunc.addEventListener('change', function(){
+    var excluFu = document.getElementById("excFunc").value == "on" ? true 
+                                                                   : false;
+    getFrq(excluFu);
+    showFrq(numWord);
+  });
+});
 chrome.storage.session.get('hlText', ({hlText}) => {
   calcFrq(hlText);
 });
