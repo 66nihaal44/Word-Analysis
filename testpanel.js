@@ -58,7 +58,7 @@ function showFrq(wNum){
     },
     title: {
       display: true,
-      text: "Top 25 Most Frequent Words"
+      text: "Most Frequent Words"
     }
   }
   });
