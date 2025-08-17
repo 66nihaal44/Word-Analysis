@@ -23,10 +23,10 @@ function calcFrq(text){
     frq.sort(function(a, b){return b[1]-a[1]});
     console.log(frq);
     var numWord = document.getElementById("wordNum").value;
-    showFrq(frq, 25);
+    showFrq(numWord);
   }
 }
-function showFrq(frq, wNum){
+function showFrq(wNum){
   const dispWords = [], dispFrq = [];
   for(var i = 0; i < wNum && i < frq.length; ++i){
       dispWords[i] = frq[i][0];
