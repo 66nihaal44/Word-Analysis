@@ -28,7 +28,7 @@ function calcFrq(text){
 }
 document.addEventListener('DOMContentLoaded', function() {
   var wordNum = document.getElementById("wordNum");
-  wordNum.addEventListener('click', function(){
+  wordNum.addEventListener('change', function(){
     showFrq(wordNum.value);
   });
 });
