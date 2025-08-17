@@ -26,6 +26,12 @@ function calcFrq(text){
     showFrq(numWord);
   }
 }
+document.addEventListener('DOMContentLoaded', function() {
+  var wordNum = document.getElementById("wordNum");
+  wordNum.addEventListener('click', function(){
+    showFrq(wordNum.value);
+  });
+});
 function showFrq(wNum){
   const dispWords = [], dispFrq = [];
   for(var i = 0; i < wNum && i < frq.length; ++i){
