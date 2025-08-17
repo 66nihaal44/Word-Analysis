@@ -12,6 +12,7 @@ function calcFrq(text){
     const wordArr = [...wordIt];
     const wordCount = wordArr.length;
     wordArr.sort();
+    frq.length = 0;
     for(var i = 0, j = 0; i < wordCount; ++i, ++j){
       frq[j] = [wordArr[i][0], 1];
       while(i < wordCount - 1 && wordArr[i + 1][0] === wordArr[i][0]){
@@ -21,6 +22,7 @@ function calcFrq(text){
     }
     frq.sort(function(a, b){return b[1]-a[1]});
     console.log(frq);
+    var numWord = document.getElementById("wordNum").value;
     showFrq(frq, 25);
   }
 }
