@@ -1,4 +1,4 @@
-const dispWords = [], dispFrq = [];
+const frq = [];
 console.log("testpanel.js");
 //const frqList = document.querySelector(`#frqList`);
 function calcFrq(text){
@@ -11,7 +11,6 @@ function calcFrq(text){
     const wordIt = text.matchAll(countWordEx);
     const wordArr = [...wordIt];
     const wordCount = wordArr.length;
-    const frq = [];
     wordArr.sort();
     for(var i = 0, j = 0; i < wordCount; ++i, ++j){
       frq[j] = [wordArr[i][0], 1];
@@ -22,11 +21,12 @@ function calcFrq(text){
     }
     frq.sort(function(a, b){return b[1]-a[1]});
     console.log(frq);
-    showFrq(frq);
+    showFrq(frq, 25);
   }
 }
-function showFrq(frq){
-  for(var i = 0; i < 25 && i < frq.length; ++i){
+function showFrq(frq, wNum){
+  const dispWords = [], dispFrq = [];
+  for(var i = 0; i < wNum && i < frq.length; ++i){
       dispWords[i] = frq[i][0];
       dispFrq[i] = frq[i][1];
   }
