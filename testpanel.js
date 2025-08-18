@@ -23,7 +23,7 @@ function calcFrq(text){
 function getFrq(excFu){
   frq.length = 0;
   for(var i = 0, j = 0; i < wordArr.length; ++i, ++j){
-      if(excFu && functionWords.indexOf(wordArr[i][0].toLowerCase) > -1){
+      while(excFu && functionWords.indexOf(wordArr[i][0].toLowerCase) > -1){
         ++i;
       }
       frq[j] = [wordArr[i][0], 1];
