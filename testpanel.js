@@ -2,7 +2,7 @@ const frq = [];
 var numWord = document.getElementById("wordNum").value;
 var excluFu = document.getElementById("excFunc").value == "on" ? true 
                                                                : false;
-const functionWords = ["the", "a",  "and", "of", "is"];
+const functionWords = ["the", "a", "and", "of", "is"];
 console.log("testpanel.js");
 //const frqList = document.querySelector(`#frqList`);
 function calcFrq(text){
@@ -74,7 +74,7 @@ function showFrq(wNum){
 document.addEventListener('DOMContentLoaded', function() {
   var wordNum = document.getElementById("wordNum");
   wordNum.addEventListener('change', function(){
-    var numWord = document.getElementById("wordNum").value;
+    var numWord = wordNum.value;
     showFrq(numWord);
   });
 });
@@ -82,8 +82,8 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
   var excFunc = document.getElementById("excFunc");
   excFunc.addEventListener('change', function(){
-    var excluFu = document.getElementById("excFunc").value == "on" ? true 
-                                                                   : false;
+    var excluFu = excFunc.value == "on" ? true 
+                                        : false;
     getFrq(excluFu);
     showFrq(numWord);
   });
