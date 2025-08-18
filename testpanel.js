@@ -75,7 +75,7 @@ function showFrq(wNum){
 document.addEventListener('DOMContentLoaded', function() {
   var wordNum = document.getElementById("wordNum");
   wordNum.addEventListener('change', function(){
-    var numWord = wordNum.value;
+    numWord = wordNum.value;
     showFrq(numWord);
   });
 });
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var excFunc = document.getElementById("excFunc");
   excFunc.addEventListener('change', function(){
     console.log("Changed checkbox state")
-    var excluFu = excFunc.value == "on" ? true 
+    excluFu = excFunc.value == "on" ? true 
                                         : false;
     getFrq(excluFu);
     showFrq(numWord);
