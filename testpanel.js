@@ -1,4 +1,5 @@
 const frq = [];
+var wordArr;
 var numWord = document.getElementById("wordNum").value;
 var excluFu = document.getElementById("excFunc").value == "on" ? true 
                                                                : false;
@@ -13,13 +14,13 @@ function calcFrq(text){
     }*/
     const countWordEx = /[^\s]+/g;
     const wordIt = text.matchAll(countWordEx);
-    const wordArr = [...wordIt];
+    wordArr = [...wordIt];
     wordArr.sort();
-    getFrq(excluFu, wordArr);
+    getFrq(excluFu);
     showFrq(numWord);
   }
 }
-function getFrq(excFu, wordArr){
+function getFrq(excFu){
   frq.length = 0;
   for(var i = 0, j = 0; i < wordArr.length; ++i, ++j){
       if(excFu && functionWords.indexOf(wordArr[i][0].toLowerCase) > -1){
