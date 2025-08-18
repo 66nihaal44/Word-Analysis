@@ -79,13 +79,15 @@ document.addEventListener('DOMContentLoaded', function() {
     showFrq(numWord);
   });
 });
-// check if 'change' is right for checkbox
 document.addEventListener('DOMContentLoaded', function() {
   var excFunc = document.getElementById("excFunc");
   excFunc.addEventListener('change', function(){
-    console.log("Changed checkbox state")
+    // check if 'change' is right for checkbox
     excluFu = excFunc.value == "on" ? true 
                                         : false;
+    // always sets to true for some reason
+    console.log("excluFu new value:");
+    console.log(excluFu);
     getFrq(excluFu);
     showFrq(numWord);
   });
