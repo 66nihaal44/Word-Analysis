@@ -2,7 +2,7 @@ const frq = [];
 var numWord = document.getElementById("wordNum").value;
 var excluFu = document.getElementById("excFunc").value == "on" ? true 
                                                                : false;
-const functionWords = [];
+const functionWords = ["the", "and", "of", "is"];
 console.log("testpanel.js");
 //const frqList = document.querySelector(`#frqList`);
 function calcFrq(text){
@@ -23,7 +23,7 @@ function calcFrq(text){
 function getFrq(excFu){
   frq.length = 0;
   for(var i = 0, j = 0; i < wordCount; ++i, ++j){
-      if(excFu && functionWords.indexOf(wordArr[i][0].toLowerCase)){
+      if(excFu && functionWords.indexOf(wordArr[i][0].toLowerCase) > -1){
         ++i;
       }
       frq[j] = [wordArr[i][0], 1];
