@@ -14,20 +14,19 @@ function calcFrq(text){
     const countWordEx = /[^\s]+/g;
     const wordIt = text.matchAll(countWordEx);
     const wordArr = [...wordIt];
-    const wordCount = wordArr.length;
     wordArr.sort();
-    getFrq(excluFu);
+    getFrq(excluFu, wordArr);
     showFrq(numWord);
   }
 }
-function getFrq(excFu){
+function getFrq(excFu, wordArr){
   frq.length = 0;
-  for(var i = 0, j = 0; i < wordCount; ++i, ++j){
+  for(var i = 0, j = 0; i < wordArr.length; ++i, ++j){
       if(excFu && functionWords.indexOf(wordArr[i][0].toLowerCase) > -1){
         ++i;
       }
       frq[j] = [wordArr[i][0], 1];
-      while(i < wordCount - 1 && wordArr[i + 1][0] === wordArr[i][0]){
+      while(i < wordArr.length - 1 && wordArr[i + 1][0] === wordArr[i][0]){
         ++i;
         ++frq[j][1];
       }
