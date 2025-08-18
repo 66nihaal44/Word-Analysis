@@ -81,7 +81,8 @@ document.addEventListener('DOMContentLoaded', function() {
 // check if 'change' is right for checkbox
 document.addEventListener('DOMContentLoaded', function() {
   var excFunc = document.getElementById("excFunc");
-  excFunc.addEventListener('click', function(){
+  excFunc.addEventListener('change', function(){
+    console.log("Changed checkbox state")
     var excluFu = excFunc.value == "on" ? true 
                                         : false;
     getFrq(excluFu);
