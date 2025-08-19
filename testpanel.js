@@ -16,14 +16,14 @@ function calcFrq(text){
     const wordIt = text.matchAll(countWordEx);
     wordArr = [...wordIt];
     wordArr.sort();
-    getFrq(excluFu);
-    showFrq(numWord);
+    getFrq();
+    showFrq();
   }
 }
-function getFrq(excFu){
+function getFrq(){
   frq.length = 0;
   for(var i = 0, j = 0; i < wordArr.length; ++i, ++j){
-      while(excFu && functionWords.indexOf(wordArr[i][0].toLowerCase) > -1){
+      while(excluFu && functionWords.indexOf(wordArr[i][0].toLowerCase) > -1){
         ++i;
       }
       frq[j] = [wordArr[i][0], 1];
@@ -35,9 +35,9 @@ function getFrq(excFu){
   frq.sort(function(a, b){return b[1]-a[1]});
   console.log(frq);
 }
-function showFrq(wNum){
+function showFrq(){
   const dispWords = [], dispFrq = [];
-  for(var i = 0; i < wNum && i < frq.length; ++i){
+  for(var i = 0; i < numWord && i < frq.length; ++i){
       dispWords[i] = frq[i][0];
       dispFrq[i] = frq[i][1];
   }
