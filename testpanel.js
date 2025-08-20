@@ -24,8 +24,8 @@ function getFrq(){
       while(excluFu && functionWords.indexOf(wordArr[i][0].toLowerCase()) > -1){
         ++i;
       }
-      frq[j] = [wordArr[i][0], 1];
-      while(i < wordArr.length - 1 && wordArr[i + 1][0] === wordArr[i][0]){
+      frq[j] = [wordArr[i][0].toLowerCase(), 1];
+      while(i < wordArr.length - 1 && wordArr[i + 1][0].toLowerCase() === wordArr[i][0].toLowerCase()){
         ++i;
         ++frq[j][1];
       }
