@@ -1,4 +1,5 @@
 document.getElementById("excFunc").style.display = "none";
+document.getElementById("excFuncL").style.display = "none";
 document.getElementById("wordNum").style.display = "none";
 document.getElementById("frqChart").style.display = "none";
 const frq = [];
@@ -25,6 +26,7 @@ function getFrq(){
   document.getElementById("para1").style.display = "none";
   document.getElementById("para2").style.display = "none";
   document.getElementById("excFunc").style.display = "inline";
+  document.getElementById("excFuncL").style.display = "inline";
   document.getElementById("wordNum").style.display = "inline";
   document.getElementById("frqChart").style.display = "inline";
   frq.length = 0;
