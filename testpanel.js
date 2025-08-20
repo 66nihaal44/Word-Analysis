@@ -1,3 +1,6 @@
+document.getElementById("excFunc").style.display = "none";
+document.getElementById("wordNum").style.display = "none";
+document.getElementById("frqChart").style.display = "none";
 const frq = [];
 var wordArr;
 var numWord = document.getElementById("wordNum").value;
@@ -19,6 +22,11 @@ function calcFrq(text){
   }
 }
 function getFrq(){
+  document.getElementById("para1").style.display = "none";
+  document.getElementById("para2").style.display = "none";
+  document.getElementById("excFunc").style.display = "inline";
+  document.getElementById("wordNum").style.display = "inline";
+  document.getElementById("frqChart").style.display = "inline";
   frq.length = 0;
   for(var i = 0, j = 0; i < wordArr.length; ++i, ++j){
       while(excluFu && functionWords.indexOf(wordArr[i][0].toLowerCase()) > -1){
