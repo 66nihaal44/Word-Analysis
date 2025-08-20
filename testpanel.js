@@ -11,9 +11,8 @@ function calcFrq(text){
     /*while(frqList.firstChild){
       frqList.removeChild(frqList.firstChild);
     }*/
-    const countWordEx = /[^\s]+/g;
-    const wordIt = text.matchAll(countWordEx);
-    wordArr = [...wordIt];
+    wordIte = text.matchAll(/[^\s.,\/#!$%\^&\*;:{}=\-_`~()]+/g);
+    wordArr = [...wordIte];
     wordArr.sort();
     getFrq();
     showFrq();
