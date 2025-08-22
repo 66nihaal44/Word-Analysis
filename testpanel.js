@@ -81,7 +81,8 @@ function showFrq(){
       scales: {
       yAxes: [{
         ticks: {
-          beginAtZero: true
+          beginAtZero: true,
+          precision: 0
         }
       }]
     },
