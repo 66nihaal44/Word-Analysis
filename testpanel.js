@@ -1,4 +1,6 @@
 const frq = [];
+const colorArr = [];
+const colorPos = ["red", "blue", "green", "yellow"];
 var wordArr;
 var numWord = document.getElementById("wordNum").value;
 var excluFu = document.getElementById("excFunc").checked;
@@ -49,6 +51,10 @@ function showFrq(){
   for(var i = 0; i < numWord && i < frq.length; ++i){
       dispWords[i] = frq[i][0];
       dispFrq[i] = frq[i][1];
+  }
+  colorArr.length = 0;
+  for(var i = 0; i < frq.length; ++i){
+    colorArr[i] = Math.floor(Math.random() * 5);
   }
   new Chart(document.getElementById("frqChart").getContext('2d'), {
     type: "bar",
