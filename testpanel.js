@@ -1,12 +1,13 @@
-document.getElementById("excFunc").style.display = "none";
-document.getElementById("excFuncL").style.display = "none";
-document.getElementById("wordNum").style.display = "none";
-document.getElementById("frqChart").style.display = "none";
 const frq = [];
 var wordArr;
 var numWord = document.getElementById("wordNum").value;
 var excluFu = document.getElementById("excFunc").checked;
 const functionWords = ["the", "a", "and", "of", "is"];
+const cincc = new Intl.Collator('en');
+document.getElementById("excFunc").style.display = "none";
+document.getElementById("excFuncL").style.display = "none";
+document.getElementById("wordNum").style.display = "none";
+document.getElementById("frqChart").style.display = "none";
 console.log("testpanel.js");
 //const frqList = document.querySelector(`#frqList`);
 function calcFrq(text){
@@ -17,7 +18,7 @@ function calcFrq(text){
     }*/
     wordIte = text.matchAll(/[^\s.,\/#!$%\^&\*;:{}=\-_`~()]+/g);
     wordArr = [...wordIte];
-    wordArr.sort();
+    wordArr.sort(cincc.compare);
     getFrq();
     showFrq();
   }
