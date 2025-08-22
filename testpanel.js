@@ -54,7 +54,18 @@ function showFrq(){
   }
   colorArr.length = 0;
   for(var i = 0; i < frq.length; ++i){
-    colorArr[i] = Math.floor(Math.random() * 5);
+    colorArr[i] = colorPos[Math.floor(Math.random() * 4)];
+    if(i > 0){
+      while(colorArr[i] == colorArr[i-1]){
+        colorArr[i] = colorPos[Math.floor(Math.random() * 4)];
+      }
+    }
+    if(i > 1){
+      while(colorArr[i] == colorArr[i-1] ||
+            colorArr[i] == colorArr[i-2]){
+        colorArr[i] = colorPos[Math.floor(Math.random() * 4)];
+      }
+    }
   }
   new Chart(document.getElementById("frqChart").getContext('2d'), {
     type: "bar",
