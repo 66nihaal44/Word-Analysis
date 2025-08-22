@@ -61,7 +61,7 @@ function showFrq(){
     data: {
       labels: dispWords,
       datasets: [{
-      backgroundColor: "red",
+      backgroundColor: colorArr,
       data: dispFrq
       }]
     },
