@@ -2,12 +2,16 @@ const frq = [];
 const colorArr = [];
 const colorPos = ["red", "blue", "green", "yellow"];
 var wordArr;
-var numWord = document.getElementById("wordNum").value;
-var excluFu = document.getElementById("excFunc").checked;
+const excFunc = document.getElementById("excFunc");
+const wordNum = document.getElementById("wordNum");
+var excluFu = excFunc.checked;
+var numWord = wordNum.value;
 const functionWords = ["the", "a", "and", "of", "is"];
 const cincc = new Intl.Collator('en');
 document.getElementById("excFunc").style.display = "none";
 document.getElementById("excFuncL").style.display = "none";
+document.getElementById("excNum").style.display = "none";
+document.getElementById("excNumL").style.display = "none";
 document.getElementById("wordNum").style.display = "none";
 document.getElementById("frqChart").style.display = "none";
 console.log("testpanel.js");
@@ -30,6 +34,8 @@ function getFrq(){
   document.getElementById("para2").style.display = "none";
   document.getElementById("excFunc").style.display = "inline";
   document.getElementById("excFuncL").style.display = "inline";
+  document.getElementById("excNum").style.display = "inline";
+  document.getElementById("excNumL").style.display = "inline";
   document.getElementById("wordNum").style.display = "inline";
   document.getElementById("frqChart").style.display = "inline";
   frq.length = 0;
@@ -52,6 +58,7 @@ function showFrq(){
       dispWords[i] = frq[i][0];
       dispFrq[i] = frq[i][1];
   }
+  // generate random array of colors
   colorArr.length = 0;
   for(var i = 0; i < frq.length; ++i){
     colorArr[i] = colorPos[Math.floor(Math.random() * 4)];
@@ -100,18 +107,16 @@ function showFrq(){
     }*/
 }
 document.addEventListener('DOMContentLoaded', function() {
-  var wordNum = document.getElementById("wordNum");
-  wordNum.addEventListener('change', function(){
-    numWord = wordNum.value;
-    showFrq(numWord);
-  });
-});
-document.addEventListener('DOMContentLoaded', function() {
-  var excFunc = document.getElementById("excFunc");
   excFunc.addEventListener('change', function(){
     // check if 'change' is right for checkbox
     excluFu = excFunc.checked;
     getFrq(excluFu);
+    showFrq(numWord);
+  });
+});
+document.addEventListener('DOMContentLoaded', function() {
+  wordNum.addEventListener('change', function(){
+    numWord = wordNum.value;
     showFrq(numWord);
   });
 });
