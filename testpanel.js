@@ -3,8 +3,10 @@ const colorArr = [];
 const colorPos = ["red", "blue", "green", "yellow"];
 var wordArr;
 const excFunc = document.getElementById("excFunc");
+const excNum = document.getElementById("excNum");
 const wordNum = document.getElementById("wordNum");
 var excluFu = excFunc.checked;
+var excluNu = excNum.checked;
 var numWord = wordNum.value;
 const functionWords = ["the", "a", "and", "of", "is"];
 const cincc = new Intl.Collator('en');
@@ -41,6 +43,9 @@ function getFrq(){
   frq.length = 0;
   for(var i = 0, j = 0; i < wordArr.length; ++i, ++j){
       while(excluFu && functionWords.indexOf(wordArr[i][0].toLowerCase()) > -1){
+        ++i;
+      }
+    while(excluNu && !isNaN(wordArr[i][0])){
         ++i;
       }
       frq[j] = [wordArr[i][0].toLowerCase(), 1];
@@ -110,14 +115,22 @@ document.addEventListener('DOMContentLoaded', function() {
   excFunc.addEventListener('change', function(){
     // check if 'change' is right for checkbox
     excluFu = excFunc.checked;
-    getFrq(excluFu);
-    showFrq(numWord);
+    getFrq();
+    showFrq();
+  });
+});
+document.addEventListener('DOMContentLoaded', function() {
+  excFunc.addEventListener('change', function(){
+    // check if 'change' is right for checkbox
+    excluNu = excNum.checked;
+    getFrq();
+    showFrq();
   });
 });
 document.addEventListener('DOMContentLoaded', function() {
   wordNum.addEventListener('change', function(){
     numWord = wordNum.value;
-    showFrq(numWord);
+    showFrq();
   });
 });
 chrome.storage.session.get('hlText', ({hlText}) => {
