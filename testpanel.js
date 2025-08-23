@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 document.addEventListener('DOMContentLoaded', function() {
-  excFunc.addEventListener('change', function(){
+  excNum.addEventListener('change', function(){
     // check if 'change' is right for checkbox
     excluNu = excNum.checked;
     getFrq();
