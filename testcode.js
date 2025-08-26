@@ -1,7 +1,7 @@
-document.getElementById('wordNum').addEventListener('click', function() {
+document.getElementById('excFunc').addEventListener('click', function() {
   chrome.runtime.sendMessage();
 });
-document.getElementById('wordNum').addEventListener('click', function() {
+document.getElementById('excNum').addEventListener('click', function() {
   chrome.runtime.sendMessage();
 });
 document.getElementById('wordNum').addEventListener('click', function() {
