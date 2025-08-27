@@ -141,3 +141,14 @@ chrome.storage.session.onChanged.addListener((changes) => {
     calcFrq(changes['hlText'].newValue);
   }
 })
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if(message.action === 'excFunc'){
+    getFrq();
+    showFrq();
+  } else if(message.action === 'excNum'){
+    getFrq();
+    showFrq();
+  } else if(message.action === 'wordNum'){
+    showFrq();
+  }
+});
