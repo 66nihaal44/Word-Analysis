@@ -143,12 +143,15 @@ chrome.storage.session.onChanged.addListener((changes) => {
 })
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if(message.action === 'excFunc'){
+    excluFu = data;
     getFrq();
     showFrq();
   } else if(message.action === 'excNum'){
+    excluNu = data;
     getFrq();
     showFrq();
   } else if(message.action === 'wordNum'){
+    numWord = data;
     showFrq();
   }
 });
