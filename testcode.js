@@ -1,18 +1,30 @@
-document.getElementById('excFunc').addEventListener('click', function() {
+const excFunc = document.getElementById('excFunc');
+const excNum = document.getElementById('excNum');
+const wordNum = document.getElementById('wordNum');
+excFunc.addEventListener('click', function() {
   chrome.runtime.sendMessage({
     action: 'excFunc',
-    data: document.getElementById('excFunc').checked
+    data: document.getElementById('excFunc.checked
   });
 });
-document.getElementById('excNum').addEventListener('click', function() {
+excNum.addEventListener('click', function() {
   chrome.runtime.sendMessage({
     action: 'excNum',
-    data: document.getElementById('excNum').checked
+    data: excNum.checked
   });
 });
-document.getElementById('wordNum').addEventListener('change', function() {
+wordNum.addEventListener('change', function() {
   chrome.runtime.sendMessage({
     action: 'wordNum',
-    data: document.getElementById('wordNum').value
+    data: wordNum.value
   });
+});
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if(message.action === 'excFunc'){
+    excFunc.checked = message.data;
+  } else if(message.action === 'excNum'){
+    excNum.checked = message.data;
+  } else if(message.action === 'wordNum'){
+    wordNum.value = message.data;
+  }
 });
