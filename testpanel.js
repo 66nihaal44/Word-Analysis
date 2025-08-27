@@ -117,6 +117,10 @@ document.addEventListener('DOMContentLoaded', function() {
     excluFu = excFunc.checked;
     getFrq();
     showFrq();
+    chrome.runtime.sendMessage({
+      action: 'excFunc',
+      data: excluFu
+    });
   });
 });
 document.addEventListener('DOMContentLoaded', function() {
@@ -125,12 +129,20 @@ document.addEventListener('DOMContentLoaded', function() {
     excluNu = excNum.checked;
     getFrq();
     showFrq();
+    chrome.runtime.sendMessage({
+      action: 'excNum',
+      data: excluNu
+    });
   });
 });
 document.addEventListener('DOMContentLoaded', function() {
   wordNum.addEventListener('change', function(){
     numWord = wordNum.value;
     showFrq();
+    chrome.runtime.sendMessage({
+      action: 'wordNum',
+      data: numWord
+    });
   });
 });
 chrome.storage.session.get('hlText', ({hlText}) => {
