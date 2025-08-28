@@ -29,8 +29,22 @@ wordNum.addEventListener('change', function() {
   }
 });*/
 chrome.storage.session.get('excluFu', ({excluFu}) => {
-  excFunc = excluFu;
+  excFunc.checked = excluFu;
 });
 chrome.storage.session.get('excluNu', ({excluNu}) => {
-  excNum = excluNu;
+  excNum.checked = excluNu;
 });
+chrome.storage.session.get('numWord', ({numWord}) => {
+  wordNum.value = numWord;
+});
+chrome.storage.session.onChanged.addListener((changes) => {
+  if(changes['excluFu']){
+    excFunc.checked = changes['excluFu'].newValue;
+  }
+  if(changes['excluNu']){
+    excNum.checked = changes['excluNu'].newValue;
+  }
+  if(changes['numWord']){
+    wordNum.value = changes['numWord'].newValue;
+  }
+})
