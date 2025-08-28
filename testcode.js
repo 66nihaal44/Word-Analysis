@@ -4,7 +4,7 @@ const wordNum = document.getElementById('wordNum');
 excFunc.addEventListener('click', function() {
   chrome.runtime.sendMessage({
     action: 'excFunc',
-    data: document.getElementById('excFunc.checked
+    data: excFunc.checked
   });
 });
 excNum.addEventListener('click', function() {
@@ -19,7 +19,7 @@ wordNum.addEventListener('change', function() {
     data: wordNum.value
   });
 });
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+/*chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if(message.action === 'excFunc'){
     excFunc.checked = message.data;
   } else if(message.action === 'excNum'){
@@ -27,4 +27,10 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   } else if(message.action === 'wordNum'){
     wordNum.value = message.data;
   }
+});*/
+chrome.storage.session.get('excluFu', ({excluFu}) => {
+  excFunc = excluFu;
+});
+chrome.storage.session.get('excluNu', ({excluNu}) => {
+  excNum = excluNu;
 });
