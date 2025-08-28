@@ -117,10 +117,11 @@ document.addEventListener('DOMContentLoaded', function() {
     excluFu = excFunc.checked;
     getFrq();
     showFrq();
-    chrome.runtime.sendMessage({
+    /*chrome.runtime.sendMessage({
       action: 'excFunc',
       data: excluFu
-    });
+    });*/
+    chrome.storage.session.set({excluFu: excFunc});
   });
 });
 document.addEventListener('DOMContentLoaded', function() {
@@ -129,20 +130,22 @@ document.addEventListener('DOMContentLoaded', function() {
     excluNu = excNum.checked;
     getFrq();
     showFrq();
-    chrome.runtime.sendMessage({
+    /*chrome.runtime.sendMessage({
       action: 'excNum',
       data: excluNu
-    });
+    });*/
+    chrome.storage.session.set({excluNu: excNum});
   });
 });
 document.addEventListener('DOMContentLoaded', function() {
   wordNum.addEventListener('change', function(){
     numWord = wordNum.value;
     showFrq();
-    chrome.runtime.sendMessage({
+    /*chrome.runtime.sendMessage({
       action: 'wordNum',
       data: numWord
-    });
+    });*/
+    chrome.storage.session.set({numWord: wordNum});
   });
 });
 chrome.storage.session.get('hlText', ({hlText}) => {
