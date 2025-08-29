@@ -44,7 +44,7 @@ chrome.storage.session.onChanged.addListener((changes) => {
   if(changes['excluNu']){
     excNum.checked = changes['excluNu'].newValue;
   }
-  if(changes['numWord']){
+  if(changes['numWord'] && changes['numWord'].newValue !== ""){
     wordNum.value = changes['numWord'].newValue;
   }
 })
