@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
       action: 'excFunc',
       data: excluFu
     });*/
-    chrome.storage.session.set({excluFu: excFunc});
+    chrome.storage.session.set({excluFu: excluFu});
   });
 });
 document.addEventListener('DOMContentLoaded', function() {
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
       action: 'excNum',
       data: excluNu
     });*/
-    chrome.storage.session.set({excluNu: excNum});
+    chrome.storage.session.set({excluNu: excluNu});
   });
 });
 document.addEventListener('DOMContentLoaded', function() {
@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function() {
       action: 'wordNum',
       data: numWord
     });*/
-    chrome.storage.session.set({numWord: wordNum});
+    chrome.storage.session.set({numWord: numWord});
   });
 });
 chrome.storage.session.get('hlText', ({hlText}) => {
