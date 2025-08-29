@@ -1,13 +1,13 @@
 const excFunc = document.getElementById('excFunc');
 const excNum = document.getElementById('excNum');
 const wordNum = document.getElementById('wordNum');
-excFunc.addEventListener('click', function() {
+excFunc.addEventListener('change', function() {
   chrome.runtime.sendMessage({
     action: 'excFunc',
     data: excFunc.checked
   });
 });
-excNum.addEventListener('click', function() {
+excNum.addEventListener('change', function() {
   chrome.runtime.sendMessage({
     action: 'excNum',
     data: excNum.checked
