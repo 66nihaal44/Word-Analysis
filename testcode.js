@@ -36,6 +36,9 @@ chrome.storage.session.get('excluNu', ({excluNu}) => {
 });
 chrome.storage.session.get('numWord', ({numWord}) => {
   wordNum.value = numWord;
+  if(wordNum.value === ""){
+    wordNum.value = "25";
+  }
 });
 chrome.storage.session.onChanged.addListener((changes) => {
   if(changes['excluFu']){
