@@ -157,19 +157,21 @@ chrome.storage.session.onChanged.addListener((changes) => {
   }
 })
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-  if(message.action === 'excFunc'){
-    excluFu = message.data;
-    getFrq();
-    showFrq();
-    excFunc.checked = message.data;
-  } else if(message.action === 'excNum'){
-    excluNu = message.data;
-    getFrq();
-    showFrq();
-    excNum.checked = message.data;
-  } else if(message.action === 'wordNum'){
-    numWord = message.data;
-    showFrq();
-    wordNum.value = message.data;
+  if(sender.origin === "chrome-extension://gjdfmhlpaleoiindogafgndoknkjeaoc/testcode.html"){
+    if(message.action === 'excFunc'){
+      excluFu = message.data;
+      getFrq();
+      showFrq();
+      excFunc.checked = message.data;
+    } else if(message.action === 'excNum'){
+      excluNu = message.data;
+      getFrq();
+      showFrq();
+      excNum.checked = message.data;
+    } else if(message.action === 'wordNum'){
+      numWord = message.data;
+      showFrq();
+      wordNum.value = message.data;
+    }
   }
 });
