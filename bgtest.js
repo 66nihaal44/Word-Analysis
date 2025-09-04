@@ -16,10 +16,10 @@ chrome.runtime.onInstalled.addListener(() => {
 chrome.contextMenus.onClicked.addListener((item, data, tab) =>  {
   chrome.storage.session.set({hlText: data.selectionText})
   if(item.MenuItemId === "openWordPanel"){
-    chrome.sidePanel.setOptions({'testPanel.html'});
+    chrome.sidePanel.setOptions({path: 'testPanel.html'});
   }
   else if(item.MenuItemId === "openSentPanel"){
-    chrome.sidePanel.setOptions({'sentPanel.html'});
+    chrome.sidePanel.setOptions({path: 'sentPanel.html'});
   }
   chrome.sidePanel.open({tabId: tab.id});
 });
