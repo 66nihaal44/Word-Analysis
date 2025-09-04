@@ -9,6 +9,7 @@ function calcSent(text){
     sentArr[i] = wordSentArr.count;
   }
   sentArr.sort(function(a, b){return b - a});
+  console.log(sentArr);
 }
 chrome.storage.session.get('hlText', ({hlText}) => {
   calcSent(hlText);
