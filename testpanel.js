@@ -18,16 +18,6 @@ document.getElementById("wordNum").style.display = "none";
 document.getElementById("frqChart").style.display = "none";
 console.log("testpanel.js");
 //const frqList = document.querySelector(`#frqList`);
-function calcSent(text){
-  sentIte = text.matchAll(/[.]+/g);
-  sentArr = [...sentIte];
-  for(var i = 0; i < sentArr.length; ++i){
-    wordSentIte = sentArr[i].matchAll(/[^\s.,\/#!$%\^&\*;:{}=\-_`~()]+/g);
-    wordSentArr = [...wordSentIte];
-    sentArr[i] = wordSentArr.count;
-  }
-  sentArr.sort(function(a, b){return b - a});
-}
 function calcFrq(text){
   console.log("calcFrq function called.");
   if(text){
