@@ -14,7 +14,4 @@
     "service_worker": "bgtest.js"
   },
   "permissions": ["storage", "contextMenus", "sidePanel"],
-  "side_panel": {
-    "default_path": "testpanel.html"
-  }
 }
