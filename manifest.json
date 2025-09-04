@@ -13,5 +13,5 @@
   "background": {
     "service_worker": "bgtest.js"
   },
-  "permissions": ["storage", "contextMenus", "sidePanel"],
+  "permissions": ["storage", "contextMenus", "sidePanel"]
 }
