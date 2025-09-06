@@ -12,6 +12,7 @@ function createContextMenu(){
 }
 chrome.runtime.onInstalled.addListener(() => {
     createContextMenu();
+    chrome.sidePanel.setOptions({path: 'testpanel.html'});
 });
 chrome.contextMenus.onClicked.addListener((info, tab) =>  {
   chrome.storage.session.set({hlText: info.selectionText})
