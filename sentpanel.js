@@ -10,6 +10,10 @@ function calcSent(text){
   }
   sentArr.sort(function(a, b){return b - a});
   console.log(sentArr);
+  const disArr;
+  for(var i = 0; i < 10; ++i){
+    disArr[i] = sentArr[i];
+  }
 }
 chrome.storage.session.get('hlText', ({hlText}) => {
   calcSent(hlText);
