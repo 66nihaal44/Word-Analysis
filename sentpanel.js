@@ -10,7 +10,7 @@ function calcSent(text){
   for(var i = 0; i < sentArr.length; ++i){
     const wordSentIte = sentArr[i][0].matchAll(/[^\s.,\/#!$%\^&\*;:{}=\-_`~()]+/g);
     const wordSentArr = [...wordSentIte];
-    sentArr[i] = wordSentArr.count;
+    sentArr[i] = wordSentArr.length;
   }
   sentArr.sort(function(a, b){return b - a});
   console.log(sentArr);
@@ -20,7 +20,7 @@ function calcSent(text){
   }
   for(var i = 0; i < disArr.length; ++i){
     newSent = document.createElement('li');
-    newSent.innerText = i + ". " + disArr[i];
+    newSent.innerText = i + 1 + ". " + disArr[i];
     sentList.appendChild(newSent);
     }
 }
