@@ -10,10 +10,15 @@ function calcSent(text){
   }
   sentArr.sort(function(a, b){return b - a});
   console.log(sentArr);
-  const disArr;
+  const disArr = [];
   for(var i = 0; i < 10; ++i){
     disArr[i] = sentArr[i];
   }
+  for(var i = 0; i < disArr.length; ++i){
+    newSent = document.createElement('li');
+    newSent.innerText = i + ". " + disArr[i];
+    getElementById('sentList').appendChild(newSent);
+    }
 }
 chrome.storage.session.get('hlText', ({hlText}) => {
   calcSent(hlText);
