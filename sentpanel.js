@@ -20,7 +20,7 @@ function calcSent(text){
   }
   for(var i = 0; i < disArr.length; ++i){
     newSent = document.createElement('li');
-    newSent.innerText = i + 1 + ". " + disArr[i];
+    newSent.innerText = i + 1 + ". " + disArr[i] + " words";
     sentList.appendChild(newSent);
     }
 }
