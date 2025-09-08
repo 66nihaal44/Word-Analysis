@@ -5,7 +5,7 @@ function calcSent(text){
   while(sentList.firstChild){
       sentList.removeChild(sentList.firstChild);
     }
-  sentIte = text.matchAll(/[^.]+/g);
+  sentIte = text.matchAll(/[^.\n]+/g);
   sentArr = [...sentIte];
   for(var i = 0; i < sentArr.length; ++i){
     const wordSentIte = sentArr[i][0].matchAll(/[^\s.,\/#!$%\^&\*;:{}=\-_`~()]+/g);
@@ -18,11 +18,18 @@ function calcSent(text){
   for(var i = 0; i < 10 && i < sentArr.length; ++i){
     disArr[i] = sentArr[i];
   }
+  var sum = 0;
   for(var i = 0; i < disArr.length; ++i){
-    newSent = document.createElement('li');
-    newSent.innerText = i + 1 + ". " + disArr[i] + " words";
+    sum += disArr[i];
+    const newSent = document.createElement('li');
+    newSent.innerText = i + 1 + ": " + disArr[i] + " words";
     sentList.appendChild(newSent);
     }
+  if(disArr.length > 1){
+    const newSent = document.createElement('li');
+    newSent.innerText = "Average word count: " + sum / disArr.length + " words";
+    sentList.appendChild(newSent);
+  }
 }
 chrome.storage.session.get('hlText', ({hlText}) => {
   calcSent(hlText);
