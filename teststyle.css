@@ -37,3 +37,9 @@ select{
   padding: 6px;
   background-color: white;
 }
+footer{
+  text-align: center;
+  font-size: 0.8rem;
+  color: grey;
+  margin-top: 10px;
+}
