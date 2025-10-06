@@ -12,12 +12,12 @@ function createContextMenu(){
 }
 chrome.runtime.onInstalled.addListener(() => {
     createContextMenu();
-    chrome.sidePanel.setOptions({path: 'testpanel.html'});
+    chrome.sidePanel.setOptions({path: 'wordpanel.html'});
 });
 chrome.contextMenus.onClicked.addListener((info, tab) =>  {
   chrome.storage.session.set({hlText: info.selectionText})
   if(info.menuItemId === "openWordPanel"){
-    chrome.sidePanel.setOptions({path: 'testpanel.html'});
+    chrome.sidePanel.setOptions({path: 'wordpanel.html'});
   }
   else if(info.menuItemId === "openSentPanel"){
     chrome.sidePanel.setOptions({path: 'sentpanel.html'});
