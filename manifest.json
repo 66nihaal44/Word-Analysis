@@ -1,20 +1,20 @@
 {
-  "name": "Test Extension",
-  "description": "none",
+  "name": "Word Analysis",
+  "description": "Analyzes selected text",
   "version": "0.3",
   "manifest_version": 3,
   "action": {
-    "default_popup": "testcode.html"
+    "default_popup": "popup.html"
   },
   "icons": {
     "128": "new_icon.png",
     "16": "new_icon.png"
   },
   "background": {
-    "service_worker": "bgtest.js"
+    "service_worker": "bg.js"
   },
   "permissions": ["storage", "contextMenus", "sidePanel"],
   "side_panel": {
-    "default_path": "testpanel.html"
+    "default_path": "wordpanel.html"
   }
 }
