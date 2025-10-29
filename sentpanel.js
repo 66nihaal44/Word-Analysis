@@ -8,7 +8,7 @@ function calcSent(text){
   sentArr = text.split(/\. +|\n+/);
   console.log("Original: ", sentArr);
   for(var i = 0; i < sentArr.length; ++i){
-    const wordSentIte = sentArr[i][0].matchAll(/[^\s.,\/#!$%\^&\*;:{}=\-_`~()]+/g);
+    const wordSentIte = sentArr[i].matchAll(/[^\s.,\/#!$%\^&\*;:{}=\-_`~()]+/g);
     const wordSentArr = [...wordSentIte];
     sentArr[i] = wordSentArr.length;
   }
