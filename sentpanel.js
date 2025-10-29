@@ -5,8 +5,7 @@ function calcSent(text){
   while(sentList.firstChild){
       sentList.removeChild(sentList.firstChild);
     }
-  sentIte = text.matchAll(/[^.]+(?=(?:\.|\n|$))/g);
-  sentArr = [...sentIte];
+  sentArr = text.split(/\. +|\n+/);
   console.log("Original: ", sentArr);
   for(var i = 0; i < sentArr.length; ++i){
     const wordSentIte = sentArr[i][0].matchAll(/[^\s.,\/#!$%\^&\*;:{}=\-_`~()]+/g);
