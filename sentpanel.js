@@ -5,7 +5,7 @@ function calcSent(text){
   while(sentList.firstChild){
       sentList.removeChild(sentList.firstChild);
     }
-  sentIte = text.matchAll(/[^.]+(?=(?:\. +|\n|$))/g);
+  sentIte = text.matchAll(/[^.]+(?=(?:\.|\n|$))/g);
   sentArr = [...sentIte];
   console.log("Original: ", sentArr);
   for(var i = 0; i < sentArr.length; ++i){
