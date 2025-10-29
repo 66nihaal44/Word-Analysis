@@ -24,7 +24,7 @@ function calcFrq(text){
     /*while(frqList.firstChild){
       frqList.removeChild(frqList.firstChild);
     }*/
-    wordIte = text.matchAll(/[^\s.,\/#!$%\^&\*;:{}=\-_`~()]+/g);
+    wordIte = text.matchAll(/[^\s,\/#!$%\^&\*;:{}=\-_`~()]+/g);
     wordArr = [...wordIte];
     wordArr.sort(cincc.compare);
     getFrq();
