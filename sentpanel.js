@@ -22,7 +22,7 @@ function calcSent(text){
   for(var i = 0; i < disArr.length; ++i){
     sum += disArr[i];
     const newSent = document.createElement('li');
-    newSent.innerText = i + 1 + ": " + disArr[i] + " word" + disArr[i] > 1 ? "s" : "";
+    newSent.innerText = i + 1 + ": " + disArr[i] + " word" + (disArr[i] > 1 ? "s" : "");
     sentList.appendChild(newSent);
     }
   if(disArr.length > 1){
