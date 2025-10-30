@@ -27,7 +27,8 @@ function calcSent(text){
     }
   if(disArr.length > 1){
     const newSent = document.createElement('li');
-    newSent.innerText = "Average word count: " + sum / disArr.length + " words";
+    const aveWord = sum / disArr.length;
+    newSent.innerText = "Average word count: " + aveWord + " word" + (aveWord !== 1 ? "s" : "");
     sentList.appendChild(newSent);
   }
   new Chart(document.getElementById("frqChart").getContext('2d'), {
