@@ -30,6 +30,31 @@ function calcSent(text){
     newSent.innerText = "Average word count: " + sum / disArr.length + " words";
     sentList.appendChild(newSent);
   }
+  new Chart(document.getElementById("frqChart").getContext('2d'), {
+    type: "bar",
+    data: {
+      labels: none,
+      datasets: [{
+      backgroundColor: black,
+      data: dispArr
+      }]
+    },
+    options: {
+      legend: {display: false},
+      scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true,
+          precision: 0
+        }
+      }]
+    },
+    title: {
+      display: true,
+      text: "Sentences by length"
+    }
+  }
+  });
 }
 chrome.storage.session.get('hlText', ({hlText}) => {
   calcSent(hlText);
