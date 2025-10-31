@@ -19,8 +19,13 @@ function calcSent(text){
     disArr[i] = sentArr[i];
   }
   var sum = 0;
+  const sentAv;
+  if(sentArr.length > 1){// find average
+    sum += sentArr[i];//while loop
+    sentAv = sum / 
+  }
   for(var i = 0; i < disArr.length; ++i){
-    sum += disArr[i];
+    //sum += disArr[i];
     const newSent = document.createElement('li');
     newSent.innerText = i + 1 + ": " + disArr[i] + " word" + (disArr[i] !== 1 ? "s" : "");
     sentList.appendChild(newSent);
@@ -42,19 +47,19 @@ function calcSent(text){
       }]
     },
     options: {
-      legend: {display: false},
+      legend: { display: false },
       scales: {
-        yAxis: [{
+        yAxes: [{
           ticks: {
             beginAtZero: true,
             precision: 0
           }
         }]
+      },
+      title: {
+        display: true,
+        text: "Sentences by length"
       }
-    },
-    title: {
-      display: true,
-      text: "Sentences by length"
     }
   });
 }
