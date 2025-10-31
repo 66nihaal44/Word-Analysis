@@ -31,10 +31,11 @@ function calcSent(text){
     newSent.innerText = "Average word count: " + aveWord + " word" + (aveWord !== 1 ? "s" : "");
     sentList.appendChild(newSent);
   }
+  chartLabels = new Array(disArr.length).fill("name");
   new Chart(document.getElementById("frqChart").getContext('2d'), {
-    type: "bar",
+    type: "line",
     data: {
-      //labels:,
+      labels: chartLabels,
       datasets: [{
       backgroundColor: "red",
       data: disArr
@@ -43,18 +44,18 @@ function calcSent(text){
     options: {
       legend: {display: false},
       scales: {
-      yAxes: [{
-        ticks: {
-          beginAtZero: true,
-          precision: 0
-        }
-      }]
+        yAxis: [{
+          ticks: {
+            beginAtZero: true,
+            precision: 0
+          }
+        }]
+      }
     },
     title: {
       display: true,
       text: "Sentences by length"
     }
-  }
   });
 }
 chrome.storage.session.get('hlText', ({hlText}) => {
