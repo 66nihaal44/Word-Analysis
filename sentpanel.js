@@ -34,10 +34,10 @@ function calcSent(text){
   new Chart(document.getElementById("frqChart").getContext('2d'), {
     type: "bar",
     data: {
-      labels: none,
+      //labels:,
       datasets: [{
-      backgroundColor: black,
-      data: dispArr
+      backgroundColor: "red",
+      data: disArr
       }]
     },
     options: {
