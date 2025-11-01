@@ -2,6 +2,7 @@ var sentIte;
 var sentArr;
 const sentList = document.getElementById("sentList");
 function calcSent(text){
+  var sum = 0;
   while(sentList.firstChild){
       sentList.removeChild(sentList.firstChild);
     }
@@ -11,18 +12,14 @@ function calcSent(text){
     const wordSentIte = sentArr[i].matchAll(/[^\s.,\/#!$%\^&\*;:{}=\-_`~()]+/g);
     const wordSentArr = [...wordSentIte];
     sentArr[i] = wordSentArr.length;
+    sum += sentArr[i];
   }
+  const sentAv = sum / sentArr.length;
   sentArr.sort(function(a, b){return b - a});
   console.log(sentArr);
   const disArr = [];
   for(var i = 0; i < 10 && i < sentArr.length; ++i){
     disArr[i] = sentArr[i];
-  }
-  var sum = 0;
-  const sentAv;
-  if(sentArr.length > 1){// find average
-    sum += sentArr[i];//while loop
-    sentAv = sum / 
   }
   for(var i = 0; i < disArr.length; ++i){
     //sum += disArr[i];
@@ -32,8 +29,7 @@ function calcSent(text){
     }
   if(disArr.length > 1){
     const newSent = document.createElement('li');
-    const aveWord = sum / disArr.length;
-    newSent.innerText = "Average word count: " + aveWord + " word" + (aveWord !== 1 ? "s" : "");
+    newSent.innerText = "Average word count: " + sentAv + " word" + (sentAv !== 1 ? "s" : "");
     sentList.appendChild(newSent);
   }
   chartLabels = new Array(disArr.length).fill("name");
