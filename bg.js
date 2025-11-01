@@ -15,11 +15,18 @@ chrome.runtime.onInstalled.addListener(() => {
     chrome.sidePanel.setOptions({path: 'wordpanel.html'});
 });
 chrome.contextMenus.onClicked.addListener((info, tab) =>  {
-  chrome.storage.session.set({hlText: info.selectionText})
   if(info.menuItemId === "openWordPanel"){
+    chrome.storage.session.set({hlText: info.selectionText})
     chrome.sidePanel.setOptions({path: 'wordpanel.html'});
   }
   else if(info.menuItemId === "openSentPanel"){
+    chrome.scripting.executeScript({
+      target: {tabId: tab.id},
+      func getNewlines
+    }, (results) => {
+      const hlText = results[0].results;
+    )}
+  chrome.storage.session.set({hlText})
     chrome.sidePanel.setOptions({path: 'sentpanel.html'});
   }
   chrome.sidePanel.open({tabId: tab.id});
