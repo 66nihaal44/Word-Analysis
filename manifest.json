@@ -13,7 +13,7 @@
   "background": {
     "service_worker": "bg.js"
   },
-  "permissions": ["storage", "contextMenus", "sidePanel", "scripting"],
+  "permissions": ["storage", "contextMenus", "sidePanel", "scripting", "activeTab"],
   "side_panel": {
     "default_path": "wordpanel.html"
   }
