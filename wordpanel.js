@@ -5,6 +5,7 @@ var wordArr;
 const excFunc = document.getElementById("excFunc");
 const excNum = document.getElementById("excNum");
 const wordNum = document.getElementById("wordNum");
+const chartSection = document.getElementsByClassName("chartSection")[0];
 var excluFu = excFunc.checked;
 var excluNu = excNum.checked;
 var numWord = wordNum.value;
