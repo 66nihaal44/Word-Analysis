@@ -35,15 +35,15 @@ function calcSent(text){
   chartLabels = new Array(disArr.length).fill("name");
   Chart.defaults.global.defaultFontFamily = "Arial, sans-serif";
   Chart.defaults.global.defaultFontColor = "black";
-  Chart.defaults.global.defaultFontWeight = "lighter";
   new Chart(document.getElementById("frqChart").getContext('2d'), {
     type: "line",
     data: {
       labels: chartLabels,
       datasets: [{
-      backgroundColor: "red",
-      data: disArr
-      }]
+        backgroundColor: "red",
+        data: disArr
+      }],
+      fontStyle: "normal"
     },
     options: {
       legend: { display: false },
@@ -57,7 +57,8 @@ function calcSent(text){
       },
       title: {
         display: true,
-        text: "Sentences by length"
+        text: "Sentences by length",
+        fontStyle: "normal"
       }
     }
   });
