@@ -56,4 +56,6 @@ footer{
 #frqChart{
   width: 100% !important;
   height: 300px !important;
+  max-width:600px;
+  max-height:600px;
 }
