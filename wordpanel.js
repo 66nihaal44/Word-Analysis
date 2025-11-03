@@ -79,30 +79,33 @@ function showFrq(){
       }
     }
   }
+  Chart.defaults.global.defaultFontFamily = "Arial, sans-serif";
+  Chart.defaults.global.defaultFontColor = "Black";
   new Chart(document.getElementById("frqChart").getContext('2d'), {
     type: "bar",
     data: {
       labels: dispWords,
       datasets: [{
       backgroundColor: colorArr,
+      color: "black",
       data: dispFrq
       }]
     },
     options: {
       legend: {display: false},
       scales: {
-      yAxes: [{
-        ticks: {
-          beginAtZero: true,
-          precision: 0
-        }
-      }]
-    },
-    title: {
-      display: true,
-      text: "Most Frequent Words"
+        yAxes: [{
+          ticks: {
+            beginAtZero: true,
+            precision: 0
+          }
+        }]
+      },
+      title: {
+        display: true,
+        text: "Most Frequent Words"
+      }
     }
-  }
   });
    /*for(var i = 0; i < frq.length; ++i){
     newFrq = document.createElement('li');
