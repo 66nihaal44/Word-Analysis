@@ -1,6 +1,7 @@
 var sentIte;
 var sentArr;
 const sentList = document.getElementById("sentList");
+const chartSection = document.getElementsByClassName("chartSection")[0];
 function calcSent(text){
   var sum = 0;
   while(sentList.firstChild){
@@ -35,7 +36,13 @@ function calcSent(text){
   chartLabels = new Array(disArr.length).fill("name");
   Chart.defaults.global.defaultFontFamily = "Arial, sans-serif";
   Chart.defaults.global.defaultFontColor = "black";
-  new Chart(document.getElementById("frqChart").getContext('2d'), {
+  if(chartSection.firstChild){
+    chartSection.removeChild(chartSection.firstChild);
+  }
+  frqChart = createElement('canvas');
+  frqChart.setAttribute("id", "frqChart");
+  chartSection.appendChild(frqChart);
+  new Chart(frqChart.getContext('2d'), {
     type: "line",
     data: {
       labels: chartLabels,
