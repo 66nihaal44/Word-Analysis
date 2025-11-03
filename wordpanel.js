@@ -81,6 +81,12 @@ function showFrq(){
   }
   Chart.defaults.global.defaultFontFamily = "Arial, sans-serif";
   Chart.defaults.global.defaultFontColor = "black";
+  while(chartSection.firstChild){
+    chartSection.removeChild(chartSection.firstChild);
+  }
+  frqChart = document.createElement('canvas');
+  frqChart.setAttribute("id", "frqChart");
+  chartSection.appendChild(frqChart);
   new Chart(document.getElementById("frqChart").getContext('2d'), {
     type: "bar",
     data: {
