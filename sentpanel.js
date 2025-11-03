@@ -36,7 +36,7 @@ function calcSent(text){
   chartLabels = new Array(disArr.length).fill("name");
   Chart.defaults.global.defaultFontFamily = "Arial, sans-serif";
   Chart.defaults.global.defaultFontColor = "black";
-  if(chartSection.firstChild){
+  while(chartSection.firstChild){
     chartSection.removeChild(chartSection.firstChild);
   }
   frqChart = document.createElement('canvas');
