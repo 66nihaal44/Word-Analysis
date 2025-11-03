@@ -39,7 +39,7 @@ function calcSent(text){
   if(chartSection.firstChild){
     chartSection.removeChild(chartSection.firstChild);
   }
-  frqChart = createElement('canvas');
+  frqChart = document.createElement('canvas');
   frqChart.setAttribute("id", "frqChart");
   chartSection.appendChild(frqChart);
   new Chart(frqChart.getContext('2d'), {
