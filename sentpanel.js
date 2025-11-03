@@ -35,6 +35,7 @@ function calcSent(text){
   chartLabels = new Array(disArr.length).fill("name");
   Chart.defaults.global.defaultFontFamily = "Arial, sans-serif";
   Chart.defaults.global.defaultFontColor = "black";
+  Chart.defaults.global.defaultFontWeight = "lighter";
   new Chart(document.getElementById("frqChart").getContext('2d'), {
     type: "line",
     data: {
