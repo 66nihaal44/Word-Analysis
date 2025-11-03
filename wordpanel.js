@@ -81,6 +81,7 @@ function showFrq(){
   }
   Chart.defaults.global.defaultFontFamily = "Arial, sans-serif";
   Chart.defaults.global.defaultFontColor = "black";
+  Chart.defaults.global.defaultFontWeight = "lighter";
   new Chart(document.getElementById("frqChart").getContext('2d'), {
     type: "bar",
     data: {
