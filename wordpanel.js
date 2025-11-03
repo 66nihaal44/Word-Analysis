@@ -81,7 +81,7 @@ function showFrq(){
     }
   }
   Chart.defaults.global.defaultFontFamily = "Arial, sans-serif";
-  Chart.defaults.global.defaultFontColor = "black";
+  Chart.defaults.global.defaultFontColor = "white";
   while(chartSection.firstChild){
     chartSection.removeChild(chartSection.firstChild);
   }
