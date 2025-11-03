@@ -81,16 +81,15 @@ function showFrq(){
   }
   Chart.defaults.global.defaultFontFamily = "Arial, sans-serif";
   Chart.defaults.global.defaultFontColor = "black";
-  Chart.defaults.global.defaultFontWeight = "lighter";
   new Chart(document.getElementById("frqChart").getContext('2d'), {
     type: "bar",
     data: {
       labels: dispWords,
       datasets: [{
-      backgroundColor: colorArr,
-      color: "black",
-      data: dispFrq
-      }]
+        backgroundColor: colorArr,
+        data: dispFrq
+      }],
+      fontStyle: "normal"
     },
     options: {
       legend: {display: false},
@@ -104,7 +103,8 @@ function showFrq(){
       },
       title: {
         display: true,
-        text: "Most Frequent Words"
+        text: "Most Frequent Words",
+        fontStyle: "normal"
       }
     }
   });
