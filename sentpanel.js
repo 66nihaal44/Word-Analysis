@@ -49,7 +49,8 @@ function calcSent(text){
       datasets: [{
         backgroundColor: "red",
         data: disArr,
-        tension: 0
+        tension: 0,
+        fill: false
       }],
       fontStyle: "normal"
     },
