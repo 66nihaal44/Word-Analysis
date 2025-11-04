@@ -55,7 +55,21 @@ function calcSent(text){
     options: {
       legend: { display: false },
       scales: {
+        xAxes: [{
+          gridLines: {
+            color: "white",
+            zeroLineColor: "white"
+          },
+          ticks: {
+            beginAtZero: true,
+            precision: 0
+          }
+        }],
         yAxes: [{
+          gridLines: {
+            color: "white",
+            zeroLineColor: "white"
+          },
           ticks: {
             beginAtZero: true,
             precision: 0
