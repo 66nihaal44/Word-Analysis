@@ -108,8 +108,7 @@ function showFrq(){
           },
           ticks: {
             beginAtZero: true,
-            precision: 0,
-            fontColor: "white"
+            precision: 0
           }
         }],
         yAxes: [{
@@ -119,16 +118,14 @@ function showFrq(){
           },
           ticks: {
             beginAtZero: true,
-            precision: 0,
-            fontColor: "white"
+            precision: 0
           }
         }]
       },
       title: {
         display: true,
         text: "Most Frequent Words",
-        fontStyle: "normal",
-        fontColor: "white"
+        fontStyle: "normal"
       }
     }
   });
