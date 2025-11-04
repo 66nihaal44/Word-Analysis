@@ -48,7 +48,8 @@ function calcSent(text){
       labels: chartLabels,
       datasets: [{
         backgroundColor: "red",
-        data: disArr
+        data: disArr,
+        tension: 0
       }],
       fontStyle: "normal"
     },
