@@ -7,7 +7,7 @@ function calcSent(text){
   while(sentList.firstChild){
       sentList.removeChild(sentList.firstChild);
     }
-  sentArr = text.split(/(?<=[.?!]) +|\n+/);
+  sentArr = text.split(/(?<=[.?!]) +|\n+/).filter(Boolean);
   console.log("Original: ", sentArr);
   for(var i = 0; i < sentArr.length; ++i){
     const wordSentIte = sentArr[i].matchAll(/[^\s.,\/#!$%\^&\*;:{}=\-_`~()]+/g);
@@ -15,7 +15,7 @@ function calcSent(text){
     sentArr[i] = wordSentArr.length;
     sum += sentArr[i];
   }
-  sentArr = sentArr.filter(Boolean);
+  sentArr = sentArr;
   const sentAv = sum / sentArr.length;
   sentArr.sort(function(a, b){return b - a});
   console.log(sentArr);
@@ -23,12 +23,6 @@ function calcSent(text){
   for(var i = 0; i < 10 && i < sentArr.length; ++i){
     disArr[i] = sentArr[i];
   }
-  for(var i = 0; i < disArr.length; ++i){
-    //sum += disArr[i];
-    const newSent = document.createElement('li');
-    newSent.innerText = i + 1 + ": " + disArr[i] + " word" + (disArr[i] !== 1 ? "s" : "");
-    sentList.appendChild(newSent);
-    }
   if(disArr.length > 1){
     const newSent = document.createElement('li');
     newSent.innerText = "Average word count: " + sentAv.toFixed(1) + " word" + (sentAv !== 1 ? "s" : "");
