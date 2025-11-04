@@ -17,6 +17,7 @@ document.getElementById("excNum").style.display = "none";
 document.getElementById("excNumL").style.display = "none";
 document.getElementById("wordNum").style.display = "none";
 document.getElementById("frqChart").style.display = "none";
+document.getElementsByClassName("controls")[0].style.display = "none";
 console.log("testpanel.js");
 //const frqList = document.querySelector(`#frqList`);
 function calcFrq(text){
