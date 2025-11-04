@@ -101,17 +101,34 @@ function showFrq(){
     options: {
       legend: {display: false},
       scales: {
-        yAxes: [{
+        xAxes: [{
+          gridLines: {
+            color: "white",
+            zeroLineColor: "white"
+          },
           ticks: {
             beginAtZero: true,
-            precision: 0
+            precision: 0,
+            fontColor: "white"
+          }
+        }],
+        yAxes: [{
+          gridLines: {
+            color: "white",
+            zeroLineColor: "white"
+          },
+          ticks: {
+            beginAtZero: true,
+            precision: 0,
+            fontColor: "white"
           }
         }]
       },
       title: {
         display: true,
         text: "Most Frequent Words",
-        fontStyle: "normal"
+        fontStyle: "normal",
+        fontColor: "white"
       }
     }
   });
