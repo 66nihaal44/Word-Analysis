@@ -12,8 +12,14 @@ function calcSent(text){
   for(var i = 0; i < sentArr.length; ++i){
     const wordSentIte = sentArr[i].matchAll(/[^\s.,\/#!$%\^&\*;:{}=\-_`~()]+/g);
     const wordSentArr = [...wordSentIte];
-    sentArr[i] = wordSentArr.length;
-    sum += sentArr[i];
+    if(wordSentArr.length > 0){
+      sentArr[i] = wordSentArr.length;
+      sum += sentArr[i];
+    }
+    else{
+      sentArr.splice(i, 1);
+      --i;
+    }
   }
   sentArr = sentArr;
   const sentAv = sum / sentArr.length;
