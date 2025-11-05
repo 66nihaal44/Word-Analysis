@@ -25,16 +25,16 @@ function calcSent(text){
   const sentAv = sum / sentArr.length;
   sentArr.sort(function(a, b){return b - a});
   console.log(sentArr);
-  const disArr = [];
+  /*const disArr = [];
   for(var i = 0; i < 10 && i < sentArr.length; ++i){
     disArr[i] = sentArr[i];
-  }
-  if(disArr.length > 1){
+  }*/
+  if(sentArr.length > 1){
     const newSent = document.createElement('li');
     newSent.innerText = "Average word count: " + sentAv.toFixed(1) + " word" + (sentAv !== 1 ? "s" : "");
     sentList.appendChild(newSent);
   }
-  chartLabels = new Array(disArr.length).fill("name");
+  chartLabels = new Array(sentArr.length).fill("");
   Chart.defaults.global.defaultFontFamily = "Arial, sans-serif";
   Chart.defaults.global.defaultFontColor = "white";
   while(chartSection.firstChild){
@@ -49,7 +49,7 @@ function calcSent(text){
       labels: chartLabels,
       datasets: [{
         backgroundColor: "red",
-        data: disArr,
+        data: sentArr,
         tension: 0,
         fill: false
       }],
