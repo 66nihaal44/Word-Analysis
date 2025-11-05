@@ -60,13 +60,7 @@ function calcSent(text){
       scales: {
         xAxes: [{
           gridLines: {
-            color: "white",
-            zeroLineColor: "white"
-          },
-          ticks: {
-            beginAtZero: true,
-            precision: 0
-          }
+            display: false
         }],
         yAxes: [{
           gridLines: {
