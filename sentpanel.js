@@ -101,3 +101,16 @@ chrome.storage.session.onChanged.addListener((changes) => {
     calcSent(changes['hlText'].newValue);
   }
 })
+document.addEventListener('DOMContentLoaded', function() {
+  excFunc.addEventListener('change', function(){
+    // check if 'change' is right for checkbox
+    //excluFu = sortSent.checked;
+    //getFrq();
+    //showFrq();
+    /*chrome.runtime.sendMessage({
+      action: 'excFunc',
+      data: excluFu
+    });*/
+    //chrome.storage.session.set({excluFu: excluFu});
+  });
+});
