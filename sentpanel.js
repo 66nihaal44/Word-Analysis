@@ -78,7 +78,7 @@ function calcSent(text){
       },
       title: {
         display: true,
-        text: "Sentences and Word Length",
+        text: "Sentences and Word Count",
         fontStyle: "normal"
       }
     }
