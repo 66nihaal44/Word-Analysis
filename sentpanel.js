@@ -30,9 +30,12 @@ function calcSent(text){
     disArr[i] = sentArr[i];
   }*/
   if(sentArr.length > 1){
-    const newSent = document.createElement('li');
-    newSent.innerText = "Average word count: " + sentAv.toFixed(1) + " word" + (sentAv !== 1 ? "s" : "");
-    sentList.appendChild(newSent);
+    const newSent1 = document.createElement('li');
+    newSent1.innerText = "Average word count: " + sentAv.toFixed(1) + " word" + (sentAv !== 1 ? "s" : "");
+    sentList.appendChild(newSent1);
+    const newSent2 = document.createElement('li');
+    newSent2.innerText = sentArr.length + " sentence" + (sentArr.length !== 1 ? "s" : "");
+    sentList.appendChild(newSent2);
   }
   chartLabels = new Array(sentArr.length).fill("");
   Chart.defaults.global.defaultFontFamily = "Arial, sans-serif";
@@ -75,7 +78,7 @@ function calcSent(text){
       },
       title: {
         display: true,
-        text: "Sentences by length",
+        text: "Sentences and Word Length",
         fontStyle: "normal"
       }
     }
