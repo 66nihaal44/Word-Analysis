@@ -23,7 +23,7 @@ function calcSent(text){
   }
   sentArr = sentArr;
   const sentAv = sum / sentArr.length;
-  sentArr.sort(function(a, b){return b - a});
+  //sentArr.sort(function(a, b){return b - a});
   console.log(sentArr);
   /*const disArr = [];
   for(var i = 0; i < 10 && i < sentArr.length; ++i){
