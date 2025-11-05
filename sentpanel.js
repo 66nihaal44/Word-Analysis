@@ -64,6 +64,11 @@ function calcSent(text){
         xAxes: [{
           gridLines: {
             display: false
+          },
+          scaleLabel: {
+            display: true,
+            labelString: "Sentences"
+          }
         }],
         yAxes: [{
           gridLines: {
@@ -73,6 +78,10 @@ function calcSent(text){
           ticks: {
             beginAtZero: true,
             precision: 0
+          },
+          scaleLabel: {
+            display: true,
+            labelString: "Word Count"
           }
         }]
       },
