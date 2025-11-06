@@ -22,7 +22,6 @@ function calcSent(text){
       --i;
     }
   }
-  sentArr = sentArr;
   const sentAv = sum / sentArr.length;
   console.log(sentArr);
   /*const disArr = [];
