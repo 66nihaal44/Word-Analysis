@@ -1,6 +1,7 @@
 var sentIte;
 var sentArr;
 const sentList = document.getElementById("sentList");
+const sortSent = document.getElementById("sortSent");
 const chartSection = document.getElementsByClassName("chartSection")[0];
 function calcSent(text){
   var sum = 0;
@@ -23,7 +24,6 @@ function calcSent(text){
   }
   sentArr = sentArr;
   const sentAv = sum / sentArr.length;
-  //sentArr.sort(function(a, b){return b - a});
   console.log(sentArr);
   /*const disArr = [];
   for(var i = 0; i < 10 && i < sentArr.length; ++i){
@@ -36,6 +36,12 @@ function calcSent(text){
     const newSent2 = document.createElement('li');
     newSent2.innerText = sentArr.length + " sentence" + (sentArr.length !== 1 ? "s" : "");
     sentList.appendChild(newSent2);
+  }
+  createChart(false);
+}
+function createChart(sortSentCheck){
+  if(sortSentCheck){
+    sentArr.sort(function(a, b){return b - a});
   }
   chartLabels = new Array(sentArr.length).fill("");
   Chart.defaults.global.defaultFontFamily = "Arial, sans-serif";
@@ -103,10 +109,7 @@ chrome.storage.session.onChanged.addListener((changes) => {
 })
 document.addEventListener('DOMContentLoaded', function() {
   excFunc.addEventListener('change', function(){
-    // check if 'change' is right for checkbox
-    //excluFu = sortSent.checked;
-    //getFrq();
-    //showFrq();
+    createChart(sortSent.checked);
     /*chrome.runtime.sendMessage({
       action: 'excFunc',
       data: excluFu
