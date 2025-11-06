@@ -44,6 +44,7 @@ function createChart(sortSentCheck){
     sentArrSorted = sentArr;
     sentArrSorted.sort(function(a, b){return b - a});
   }
+  // original sentArr is sorted ad well for some reason
   chartLabels = new Array(sentArr.length).fill("");
   Chart.defaults.global.defaultFontFamily = "Arial, sans-serif";
   Chart.defaults.global.defaultFontColor = "white";
