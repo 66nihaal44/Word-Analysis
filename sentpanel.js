@@ -40,8 +40,10 @@ function calcSent(text){
   createChart(false);
 }
 function createChart(sortSentCheck){
+  var sentArrSorted = {};
   if(sortSentCheck){
-    sentArr.sort(function(a, b){return b - a});
+    sentArrSorted = sentArr;
+    sentArrSorted.sort(function(a, b){return b - a});
   }
   chartLabels = new Array(sentArr.length).fill("");
   Chart.defaults.global.defaultFontFamily = "Arial, sans-serif";
@@ -58,7 +60,8 @@ function createChart(sortSentCheck){
       labels: chartLabels,
       datasets: [{
         backgroundColor: "red",
-        data: sentArr,
+        borderColor: "red",
+        data: sortSentCheck ? sentArr : sentArrSorted,
         tension: 0,
         fill: false
       }],
@@ -108,7 +111,7 @@ chrome.storage.session.onChanged.addListener((changes) => {
   }
 })
 document.addEventListener('DOMContentLoaded', function() {
-  excFunc.addEventListener('change', function(){
+  sortSent.addEventListener('change', function(){
     createChart(sortSent.checked);
     /*chrome.runtime.sendMessage({
       action: 'excFunc',
