@@ -61,7 +61,7 @@ function createChart(sortSentCheck){
       datasets: [{
         backgroundColor: "red",
         borderColor: "red",
-        data: sortSentCheck ? sentArr : sentArrSorted,
+        data: sortSentCheck ? sentArrSorted : sentArr,
         tension: 0,
         fill: false
       }],
