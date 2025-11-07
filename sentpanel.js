@@ -1,16 +1,18 @@
-var sentIte;
-var sentArr;
 const sentList = document.getElementById("sentList");
 const sortSent = document.getElementById("sortSent");
 const chartSection = document.getElementsByClassName("chartSection")[0];
+Chart.defaults.global.defaultFontFamily = "Arial, sans-serif";
+Chart.defaults.global.defaultFontColor = "white";
 function calcSent(text){
-  var sum = 0;
+  let sentIte;
+  let sentArr;
+  let sum = 0;
   while(sentList.firstChild){
       sentList.removeChild(sentList.firstChild);
     }
   sentArr = text.split(/(?<=[.?!]) +|\n+/).filter(Boolean);
   console.log("Original: ", sentArr);
-  for(var i = 0; i < sentArr.length; ++i){
+  for(let i = 0; i < sentArr.length; ++i){
     const wordSentIte = sentArr[i].matchAll(/[^\s.,\/#!$%\^&\*;:{}=\-_`~()]+/g);
     const wordSentArr = [...wordSentIte];
     if(wordSentArr.length > 0){
@@ -39,15 +41,13 @@ function calcSent(text){
   createChart(false);
 }
 function createChart(sortSentCheck){
-  var sentArrSorted = {};
+  let sentArrSorted = {};
   if(sortSentCheck){
     sentArrSorted = [...sentArr];
     sentArrSorted.sort(function(a, b){return b - a});
   }
   // original sentArr is sorted ad well for some reason
   chartLabels = new Array(sentArr.length).fill("");
-  Chart.defaults.global.defaultFontFamily = "Arial, sans-serif";
-  Chart.defaults.global.defaultFontColor = "white";
   while(chartSection.firstChild){
     chartSection.removeChild(chartSection.firstChild);
   }
