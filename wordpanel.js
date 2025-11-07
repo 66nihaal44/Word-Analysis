@@ -139,6 +139,15 @@
      frqList.appendChild(newFrq);
      }*/
   }
+  function updateFunc(){
+    
+  }
+  function updateNumerals(){
+    
+  }
+  function updateWord(){
+    
+  }
   document.addEventListener('DOMContentLoaded', function () {
     excFunc.addEventListener('change', function () {
       // check if 'change' is right for checkbox
