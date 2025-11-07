@@ -41,7 +41,7 @@ function calcSent(text){
 function createChart(sortSentCheck){
   var sentArrSorted = {};
   if(sortSentCheck){
-    sentArrSorted = sentArr;
+    sentArrSorted = [...sentArr];
     sentArrSorted.sort(function(a, b){return b - a});
   }
   // original sentArr is sorted ad well for some reason
