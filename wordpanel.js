@@ -2,16 +2,17 @@
   const frq = [];
   const colorArr = [];
   const colorPos = ["red", "blue", "green", "yellow"];
-  var wordArr;
+  let wordArr;
   const excFunc = document.getElementById("excFunc");
   const excNum = document.getElementById("excNum");
   const wordNum = document.getElementById("wordNum");
   const chartSection = document.getElementsByClassName("chartSection")[0];
-  var excluFu = excFunc.checked;
-  var excluNu = excNum.checked;
-  var numWord = wordNum.value;
+  let excluFu = excFunc.checked;
+  let excluNu = excNum.checked;
+  let numWord = wordNum.value;
   const functionWords = ["the", "a", "and", "of", "is"];
   const cincc = new Intl.Collator('en');
+  let frqChartChart;
   document.getElementById("excFunc").style.display = "none";
   document.getElementById("excFuncL").style.display = "none";
   document.getElementById("excNum").style.display = "none";
@@ -44,7 +45,7 @@
     document.getElementById("wordNum").style.display = "inline";
     document.getElementById("frqChart").style.display = "inline";
     frq.length = 0;
-    for (var i = 0, j = 0; i < wordArr.length; ++i, ++j) {
+    for (let i = 0, j = 0; i < wordArr.length; ++i, ++j) {
       while (excluFu && functionWords.indexOf(wordArr[i][0].toLowerCase()) > -1) {
         ++i;
       }
@@ -62,13 +63,13 @@
   }
   function showFrq() {
     const dispWords = [], dispFrq = [];
-    for (var i = 0; i < numWord && i < frq.length; ++i) {
+    for (let i = 0; i < numWord && i < frq.length; ++i) {
       dispWords[i] = frq[i][0];
       dispFrq[i] = frq[i][1];
     }
     // generate random array of colors
     colorArr.length = 0;
-    for (var i = 0; i < frq.length; ++i) {
+    for (let i = 0; i < frq.length; ++i) {
       colorArr[i] = colorPos[Math.floor(Math.random() * 4)];
       if (i > 0) {
         while (colorArr[i] == colorArr[i - 1]) {
@@ -90,7 +91,7 @@
     frqChart = document.createElement('canvas');
     frqChart.setAttribute("id", "frqChart");
     chartSection.appendChild(frqChart);
-    new Chart(document.getElementById("frqChart").getContext('2d'), {
+    frqChartChart = new Chart(document.getElementById("frqChart").getContext('2d'), {
       type: "bar",
       data: {
         labels: dispWords,
@@ -131,7 +132,7 @@
         }
       }
     });
-    /*for(var i = 0; i < frq.length; ++i){
+    /*for(let i = 0; i < frq.length; ++i){
      newFrq = document.createElement('li');
      newFrq.innerText = frq[i][0] + ": ";
      newFrq.innerText = frq[i][0] + ": " + frq[i][1];
