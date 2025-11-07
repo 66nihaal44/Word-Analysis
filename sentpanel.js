@@ -3,6 +3,7 @@
   const sortSent = document.getElementById("sortSent");
   const chartSection = document.getElementsByClassName("chartSection")[0];
   let sentArr;
+  let frqChartChart;
   Chart.defaults.global.defaultFontFamily = "Arial, sans-serif";
   Chart.defaults.global.defaultFontColor = "white";
   function calcSent(text) {
@@ -42,10 +43,10 @@
   }
   function createChart(sortSentCheck) {
     let sentArrSorted = {};
-    if (sortSentCheck) {
+    /*if (sortSentCheck) {
       sentArrSorted = [...sentArr];
       sentArrSorted.sort(function (a, b) { return b - a });
-    }
+    }*/
     chartLabels = new Array(sentArr.length).fill("");
     while (chartSection.firstChild) {
       chartSection.removeChild(chartSection.firstChild);
@@ -53,14 +54,14 @@
     frqChart = document.createElement('canvas');
     frqChart.setAttribute("id", "frqChart");
     chartSection.appendChild(frqChart);
-    new Chart(frqChart.getContext('2d'), {
+    frqChartChart = new Chart(frqChart.getContext('2d'), {
       type: "line",
       data: {
         labels: chartLabels,
         datasets: [{
           backgroundColor: "red",
           borderColor: "red",
-          data: sortSentCheck ? sentArrSorted : sentArr,
+          data: sentArr,//sortSentCheck ? sentArrSorted : sentArr,
           tension: 0,
           fill: false
         }],
@@ -101,6 +102,17 @@
       }
     });
   }
+  function updateChart(sortSentCheck){
+    let sentArrSorted = {};
+    if (sortSentCheck) {
+      sentArrSorted = [...sentArr];
+      sentArrSorted.sort(function (a, b) { return b - a });
+    }
+    if(frqChartChart){
+      frqChartChart.data.datasets[0].data = sortSentCheck ? sentArrSorted : sentArr;
+      frqChartChart.update();
+    }
+  }
   chrome.storage.session.get('hlText', ({ hlText }) => {
     calcSent(hlText);
   });
@@ -111,7 +123,8 @@
   })
   document.addEventListener('DOMContentLoaded', function () {
     sortSent.addEventListener('change', function () {
-      createChart(sortSent.checked);
+      //createChart(sortSent.checked);
+      updateChart(sortSent.checked);
       /*chrome.runtime.sendMessage({
         action: 'excFunc',
         data: excluFu
