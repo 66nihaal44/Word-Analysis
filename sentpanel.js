@@ -39,11 +39,8 @@
       newSent2.innerText = sentArr.length + " sentence" + (sentArr.length !== 1 ? "s" : "");
       sentList.appendChild(newSent2);
     }
-    createChart(false);
-  }
-  function createChart(sortSentCheck) {
-    let sentArrSorted = {};
-    /*if (sortSentCheck) {
+    /*let sentArrSorted = {};
+    if (sortSentCheck) {
       sentArrSorted = [...sentArr];
       sentArrSorted.sort(function (a, b) { return b - a });
     }*/
