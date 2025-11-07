@@ -2,11 +2,10 @@
   const sentList = document.getElementById("sentList");
   const sortSent = document.getElementById("sortSent");
   const chartSection = document.getElementsByClassName("chartSection")[0];
+  let sentArr;
   Chart.defaults.global.defaultFontFamily = "Arial, sans-serif";
   Chart.defaults.global.defaultFontColor = "white";
   function calcSent(text) {
-    let sentIte;
-    let sentArr;
     let sum = 0;
     while (sentList.firstChild) {
       sentList.removeChild(sentList.firstChild);
