@@ -46,7 +46,6 @@
       sentArrSorted = [...sentArr];
       sentArrSorted.sort(function (a, b) { return b - a });
     }
-    // original sentArr is sorted ad well for some reason
     chartLabels = new Array(sentArr.length).fill("");
     while (chartSection.firstChild) {
       chartSection.removeChild(chartSection.firstChild);
