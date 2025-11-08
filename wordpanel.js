@@ -129,8 +129,8 @@
     }
     else{
       frqChartChart.data.labels = dispWords;
-      frqChartChart.data.dataset.backgroundColor = colorArr;
-      frqChartChart.data.dataset.data = dispFrq;
+      frqChartChart.data.datasets[0].backgroundColor = colorArr;
+      frqChartChart.data.datasets[0].data = dispFrq;
       frqChartChart.update();
     }
     /*for(let i = 0; i < frq.length; ++i){
