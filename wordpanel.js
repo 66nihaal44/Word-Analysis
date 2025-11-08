@@ -46,8 +46,8 @@
       frq[i] = [wordArr[i][0].toLowerCase(), 1];
       let j = i + 1;
       while(j < wordArr.length && wordArr[j][0].toLowerCase() === wordArr[i][0].toLowerCase()){
-        ++j;
         ++frq[i][1];
+        ++j;
       }
     }
     frq.filter(Boolean);
@@ -78,12 +78,12 @@
     }
     Chart.defaults.global.defaultFontFamily = "Arial, sans-serif";
     Chart.defaults.global.defaultFontColor = "white";
-    while (chartSection.firstChild) {
+    /*while (chartSection.firstChild) {
       chartSection.removeChild(chartSection.firstChild);
     }
     frqChart = document.createElement('canvas');
     frqChart.setAttribute("id", "frqChart");
-    chartSection.appendChild(frqChart);
+    chartSection.appendChild(frqChart);*/
     if(!frqChartChart){
       frqChartChart = new Chart(document.getElementById("frqChart").getContext('2d'), {
         type: "bar",
