@@ -51,53 +51,59 @@
     frqChart = document.createElement('canvas');
     frqChart.setAttribute("id", "frqChart");
     chartSection.appendChild(frqChart);
-    frqChartChart = new Chart(frqChart.getContext('2d'), {
-      type: "line",
-      data: {
-        labels: chartLabels,
-        datasets: [{
-          backgroundColor: "red",
-          borderColor: "red",
-          data: sentArr,//sortSentCheck ? sentArrSorted : sentArr,
-          tension: 0,
-          fill: false
-        }],
-        fontStyle: "normal"
-      },
-      options: {
-        legend: { display: false },
-        scales: {
-          xAxes: [{
-            gridLines: {
-              display: false
-            },
-            scaleLabel: {
-              display: true,
-              labelString: "Sentences"
-            }
+    if(!frqChartChart){
+      frqChartChart = new Chart(frqChart.getContext('2d'), {
+        type: "line",
+        data: {
+          labels: chartLabels,
+          datasets: [{
+            backgroundColor: "red",
+            borderColor: "red",
+            data: sentArr,//sortSentCheck ? sentArrSorted : sentArr,
+            tension: 0,
+            fill: false
           }],
-          yAxes: [{
-            gridLines: {
-              color: "white",
-              zeroLineColor: "white"
-            },
-            ticks: {
-              beginAtZero: true,
-              precision: 0
-            },
-            scaleLabel: {
-              display: true,
-              labelString: "Word Count"
-            }
-          }]
-        },
-        title: {
-          display: true,
-          text: "Sentences and Word Count",
           fontStyle: "normal"
+        },
+        options: {
+          legend: { display: false },
+          scales: {
+            xAxes: [{
+              gridLines: {
+                display: false
+              },
+              scaleLabel: {
+                display: true,
+                labelString: "Sentences"
+              }
+            }],
+            yAxes: [{
+              gridLines: {
+                color: "white",
+                zeroLineColor: "white"
+              },
+              ticks: {
+                beginAtZero: true,
+                precision: 0
+              },
+              scaleLabel: {
+                display: true,
+                labelString: "Word Count"
+              }
+            }]
+          },
+          title: {
+            display: true,
+            text: "Sentences and Word Count",
+            fontStyle: "normal"
+          }
         }
-      }
-    });
+      });
+    }
+    else{
+      frqChartChart.data.datasets[0].data = sentArr;
+      frqChartChart.update();
+    }
   }
   function updateChart(sortSentCheck){
     let sentArrSorted = {};
