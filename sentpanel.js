@@ -28,7 +28,7 @@
     const sentAv = sum / sentArr.length;
     console.log(sentArr);
     /*const disArr = [];
-    for(var i = 0; i < 10 && i < sentArr.length; ++i){
+    for(let i = 0; i < 10 && i < sentArr.length; ++i){
       disArr[i] = sentArr[i];
     }*/
     if (sentArr.length > 1) {
