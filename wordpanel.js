@@ -13,13 +13,8 @@
   const functionWords = ["the", "a", "and", "of", "is"];
   const cincc = new Intl.Collator('en');
   let frqChartChart;
-  document.getElementById("excFunc").style.display = "none";
-  document.getElementById("excFuncL").style.display = "none";
-  document.getElementById("excNum").style.display = "none";
-  document.getElementById("excNumL").style.display = "none";
-  document.getElementById("wordNum").style.display = "none";
-  document.getElementById("frqChart").style.display = "none";
   document.getElementsByClassName("controls")[0].style.display = "none";
+  document.getElementById("frqChart").style.display = "none";
   console.log("testpanel.js");
   //const frqList = document.querySelector(`#frqList`);
   function calcFrq(text) {
@@ -38,28 +33,24 @@
   function getFrq() {
     document.getElementById("para1").style.display = "none";
     document.getElementById("para2").style.display = "none";
-    document.getElementById("excFunc").style.display = "inline";
-    document.getElementById("excFuncL").style.display = "inline";
-    document.getElementById("excNum").style.display = "inline";
-    document.getElementById("excNumL").style.display = "inline";
-    document.getElementById("wordNum").style.display = "inline";
+    document.getElementsByClassName("controls")[0].style.display = "flex";
     document.getElementById("frqChart").style.display = "inline";
-    document.getElementById("wordNum").style.display = "inline";
-    document.getElementsByClassName("controls")[0].style.display = "block";
     frq.length = 0;
-    for (let i = 0, j = 0; i < wordArr.length; ++i, ++j) {
-      while (excluFu && functionWords.indexOf(wordArr[i][0].toLowerCase()) > -1) {
+    for(let i = 0; i < wordArr.length; ++i){
+      while(excluFu && functionWords.indexOf(wordArr[i][0].toLowerCase()) > -1){
         ++i;
       }
-      while (excluNu && !isNaN(wordArr[i][0])) {
+      while(excluNu && !isNaN(wordArr[i][0])){
         ++i;
       }
-      frq[j] = [wordArr[i][0].toLowerCase(), 1];
-      while (i < wordArr.length - 1 && wordArr[i + 1][0].toLowerCase() === wordArr[i][0].toLowerCase()) {
-        ++i;
-        ++frq[j][1];
+      frq[i] = [wordArr[i][0].toLowerCase(), 1];
+      let j = i + 1;
+      while(j < wordArr.length && wordArr[j][0].toLowerCase() === wordArr[i][0].toLowerCase()){
+        ++j;
+        ++frq[i][1];
       }
     }
+    frq.filter(Boolean);
     frq.sort(function (a, b) { return b[1] - a[1] });
     console.log(frq);
   }
