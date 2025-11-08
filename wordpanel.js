@@ -44,6 +44,8 @@
     document.getElementById("excNumL").style.display = "inline";
     document.getElementById("wordNum").style.display = "inline";
     document.getElementById("frqChart").style.display = "inline";
+    document.getElementById("wordNum").style.display = "inline";
+    document.getElementsByClassName("controls")[0].style.display = "block";
     frq.length = 0;
     for (let i = 0, j = 0; i < wordArr.length; ++i, ++j) {
       while (excluFu && functionWords.indexOf(wordArr[i][0].toLowerCase()) > -1) {
