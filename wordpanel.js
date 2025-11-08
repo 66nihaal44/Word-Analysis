@@ -84,47 +84,55 @@
     frqChart = document.createElement('canvas');
     frqChart.setAttribute("id", "frqChart");
     chartSection.appendChild(frqChart);
-    frqChartChart = new Chart(document.getElementById("frqChart").getContext('2d'), {
-      type: "bar",
-      data: {
-        labels: dispWords,
-        datasets: [{
-          backgroundColor: colorArr,
-          data: dispFrq
-        }],
-        fontStyle: "normal"
-      },
-      options: {
-        legend: { display: false },
-        scales: {
-          xAxes: [{
-            gridLines: {
-              color: "white",
-              zeroLineColor: "white"
-            },
-            ticks: {
-              beginAtZero: true,
-              precision: 0
-            }
+    if(!frqChartChart){
+      frqChartChart = new Chart(document.getElementById("frqChart").getContext('2d'), {
+        type: "bar",
+        data: {
+          labels: dispWords,
+          datasets: [{
+            backgroundColor: colorArr,
+            data: dispFrq
           }],
-          yAxes: [{
-            gridLines: {
-              color: "white",
-              zeroLineColor: "white"
-            },
-            ticks: {
-              beginAtZero: true,
-              precision: 0
-            }
-          }]
-        },
-        title: {
-          display: true,
-          text: "Most Frequent Words",
           fontStyle: "normal"
+        },
+        options: {
+          legend: { display: false },
+          scales: {
+            xAxes: [{
+              gridLines: {
+                color: "white",
+                zeroLineColor: "white"
+              },
+              ticks: {
+                beginAtZero: true,
+                precision: 0
+              }
+            }],
+            yAxes: [{
+              gridLines: {
+                color: "white",
+                zeroLineColor: "white"
+              },
+              ticks: {
+                beginAtZero: true,
+                precision: 0
+              }
+            }]
+          },
+          title: {
+            display: true,
+            text: "Most Frequent Words",
+            fontStyle: "normal"
+          }
         }
-      }
-    });
+      });
+    }
+    else{
+      frqChartChart.data.labels = dispWords;
+      frqChartChart.data.dataset.backgroundColor = colorArr;
+      frqChartChart.data.dataset.data = dispFrq;
+      frqChartChart.update();
+    }
     /*for(let i = 0; i < frq.length; ++i){
      newFrq = document.createElement('li');
      newFrq.innerText = frq[i][0] + ": ";
