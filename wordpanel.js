@@ -37,17 +37,15 @@
     document.getElementById("frqChart").style.display = "inline";
     frq.length = 0;
     for(let i = 0; i < wordArr.length; ++i){
-      while(excluFu && functionWords.indexOf(wordArr[i][0].toLowerCase()) > -1){
-        ++i;
-      }
-      while(excluNu && !isNaN(wordArr[i][0])){
-        ++i;
-      }
-      frq[i] = [wordArr[i][0].toLowerCase(), 1];
-      let j = i + 1;
-      while(j < wordArr.length && wordArr[j][0].toLowerCase() === wordArr[i][0].toLowerCase()){
-        ++frq[i][1];
-        ++j;
+      if(!(excluFu && functionWords.indexOf(wordArr[i][0].toLowerCase()) > -1) 
+        && !(excluNu && !isNaN(wordArr[i][0]))){
+        frq[i] = [wordArr[i][0].toLowerCase(), 1];
+        let j = i + 1;
+        while(j < wordArr.length && wordArr[j][0].toLowerCase() === wordArr[i][0].toLowerCase()){
+          ++frq[i][1];
+          ++j;
+        }
+        i = j - 1;
       }
     }
     frq.filter(Boolean);
@@ -56,10 +54,16 @@
   }
   function showFrq() {
     const dispWords = [], dispFrq = [];
-    for (let i = 0; i < numWord && i < frq.length; ++i) {
+    frq.forEach((item, index) => {
+      if(index < numWord){
+        dispWords[index] = item[0];
+        dispFrq[index] = item[1];
+      }
+    });
+    /*for (let i = 0; i < numWord && i < frq.length; ++i) {
       dispWords[i] = frq[i][0];
       dispFrq[i] = frq[i][1];
-    }
+    }*/
     // generate random array of colors
     colorArr.length = 0;
     for (let i = 0; i < frq.length; ++i) {
