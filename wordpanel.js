@@ -15,6 +15,8 @@
   let frqChartChart;
   document.getElementsByClassName("controls")[0].style.display = "none";
   document.getElementById("frqChart").style.display = "none";
+  Chart.defaults.global.defaultFontFamily = "Arial, sans-serif";
+  Chart.defaults.global.defaultFontColor = "white";
   console.log("testpanel.js");
   //const frqList = document.querySelector(`#frqList`);
   function calcFrq(text) {
@@ -79,8 +81,6 @@
         }
       }
     }
-    Chart.defaults.global.defaultFontFamily = "Arial, sans-serif";
-    Chart.defaults.global.defaultFontColor = "white";
     /*while (chartSection.firstChild) {
       chartSection.removeChild(chartSection.firstChild);
     }
