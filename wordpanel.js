@@ -11,7 +11,6 @@
   let excluNu = excNum.checked;
   let numWord = wordNum.value;
   const functionWords = ["the", "a", "and", "of", "is"];
-  const cincc = new Intl.Collator('en');
   let frqChartChart;
   document.getElementsByClassName("controls")[0].style.display = "none";
   document.getElementById("frqChart").style.display = "none";
@@ -26,7 +25,6 @@
         frqList.removeChild(frqList.firstChild);
       }*/
       wordArr = text.toLowerCase().match(/\b[\w'-]+\b/g) || [];
-      wordArr.sort(cincc.compare);
       getFrq();
       showFrq();
     }
