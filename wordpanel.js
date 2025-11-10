@@ -32,24 +32,21 @@
     }
   }
   function getFrq() {
+    const frqMap = new Map();
     document.getElementById("para1").style.display = "none";
     document.getElementById("para2").style.display = "none";
     document.getElementsByClassName("controls")[0].style.display = "flex";
     document.getElementById("frqChart").style.display = "inline";
-    frq.length = 0;
-    for(let i = 0; i < wordArr.length; ++i){
-      if(!(excluFu && functionWords.indexOf(wordArr[i]) > -1) 
-        && !(excluNu && !isNaN(wordArr[i]))){
-        frq[i] = [wordArr[i], 1];
-        let j = i + 1;
-        while(j < wordArr.length && wordArr[j] === wordArr[i]){
-          ++frq[i][1];
-          ++j;
-        }
-        i = j - 1;
+    for (const word of wordArr){
+      if(!(excluFu && functionWords.includes(word)) 
+        && !(excluNu && !isNaN(word))){
+        frqMap.set(word, (frqMap.get(word) || 0) + 1);
       }
     }
-    frq.filter(Boolean);
+    frq.length = 0;
+    for (const [word, count] of frqMap.entries()){
+      frq.push([word, count]);
+    }
     frq.sort(function (a, b) { return b[1] - a[1] });
     console.log(frq);
   }
