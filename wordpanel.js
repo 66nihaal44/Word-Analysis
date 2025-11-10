@@ -23,8 +23,7 @@
       /*while(frqList.firstChild){
         frqList.removeChild(frqList.firstChild);
       }*/
-      wordIte = text.matchAll(/[^\s,\/#!$%\^&\*;:{}=\-_`~()]+/g);
-      wordArr = [...wordIte];
+      wordArr = text.toLowerCase().match(/\b[\w'-]+\b/g) || [];
       wordArr.sort(cincc.compare);
       getFrq();
       showFrq();
@@ -37,11 +36,11 @@
     document.getElementById("frqChart").style.display = "inline";
     frq.length = 0;
     for(let i = 0; i < wordArr.length; ++i){
-      if(!(excluFu && functionWords.indexOf(wordArr[i][0].toLowerCase()) > -1) 
-        && !(excluNu && !isNaN(wordArr[i][0]))){
-        frq[i] = [wordArr[i][0].toLowerCase(), 1];
+      if(!(excluFu && functionWords.indexOf(wordArr[i]) > -1) 
+        && !(excluNu && !isNaN(wordArr[i]))){
+        frq[i] = [wordArr[i], 1];
         let j = i + 1;
-        while(j < wordArr.length && wordArr[j][0].toLowerCase() === wordArr[i][0].toLowerCase()){
+        while(j < wordArr.length && wordArr[j] === wordArr[i]){
           ++frq[i][1];
           ++j;
         }
