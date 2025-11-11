@@ -1,6 +1,5 @@
 (() => {
   const frq = [];
-  const colorArr = [];
   const colorPos = ["red", "blue", "green", "yellow"];
   let wordArr;
   const excFunc = document.getElementById("excFunc");
@@ -61,7 +60,7 @@
       dispFrq[i] = frq[i][1];
     }*/
     // generate random array of colors
-    /*colorArr.length = 0;
+    const colorArr = [];
     for (let i = 0; i < frq.length; ++i) {
       colorArr[i] = colorPos[Math.floor(Math.random() * 4)];
       if (i > 0) {
@@ -76,7 +75,7 @@
         }
       }
     }*/
-    colorArr = dispWords.map(() =>
+    const colorArr = dispWords.map(() =>
       `hsl(${Math.random() * 360}, 70%, 60%)`
     );
     /*while (chartSection.firstChild) {
