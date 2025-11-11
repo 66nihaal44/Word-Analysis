@@ -61,7 +61,7 @@
       dispFrq[i] = frq[i][1];
     }*/
     // generate random array of colors
-    colorArr.length = 0;
+    /*colorArr.length = 0;
     for (let i = 0; i < frq.length; ++i) {
       colorArr[i] = colorPos[Math.floor(Math.random() * 4)];
       if (i > 0) {
@@ -75,7 +75,10 @@
           colorArr[i] = colorPos[Math.floor(Math.random() * 4)];
         }
       }
-    }
+    }*/
+    colorArr = dispWords.map(() =>
+      `hsl(${Math.random() * 360}, 70%, 60%)`
+    );
     /*while (chartSection.firstChild) {
       chartSection.removeChild(chartSection.firstChild);
     }
