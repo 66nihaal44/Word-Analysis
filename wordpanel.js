@@ -24,7 +24,7 @@
       /*while(frqList.firstChild){
         frqList.removeChild(frqList.firstChild);
       }*/
-      wordArr = text.toLowerCase().match(/\b[\w'-]+\b/g) || [];
+      wordArr = text.replace(/[\u2018\u2019\u201C\u201D]/g, "'").toLowerCase().match(/[a-z]+(?:['.\-][a-z0-9]*[a-z]+)*/g) || [];
       getFrq();
       showFrq();
     }
