@@ -60,7 +60,7 @@
       dispFrq[i] = frq[i][1];
     }*/
     // generate random array of colors
-    const colorArr = [];
+    /*const colorArr = [];
     for (let i = 0; i < frq.length; ++i) {
       colorArr[i] = colorPos[Math.floor(Math.random() * 4)];
       if (i > 0) {
