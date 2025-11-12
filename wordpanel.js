@@ -90,8 +90,7 @@
                 zeroLineColor: "white"
               },
               ticks: {
-                beginAtZero: true,
-                precision: 0
+                autoSkip: false
               }
             }],
             yAxes: [{
