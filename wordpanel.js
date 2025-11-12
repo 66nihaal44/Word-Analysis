@@ -77,7 +77,8 @@
           labels: dispWords,
           datasets: [{
             backgroundColor: colorArr,
-            data: dispFrq
+            data: dispFrq,
+            hoverBackgroundColor: "white"
           }],
           fontStyle: "normal"
         },
