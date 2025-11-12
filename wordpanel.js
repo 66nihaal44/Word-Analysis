@@ -91,6 +91,10 @@
               },
               ticks: {
                 autoSkip: false
+              },
+              scaleLabel: {
+                display: true,
+                labelString: "Words"
               }
             }],
             yAxes: [{
@@ -101,6 +105,10 @@
               ticks: {
                 beginAtZero: true,
                 precision: 0
+              },
+              scaleLabel: {
+                display: true,
+                labelString: "Frequency"
               }
             }]
           },
