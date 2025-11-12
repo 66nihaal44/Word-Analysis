@@ -1,7 +1,7 @@
 (() => {
   const frq = [];
   ///const colorPos = ["red", "blue", "green", "yellow"];
-  let wordArr;
+  let wordArr = [];
   const excFunc = document.getElementById("excFunc");
   const excNum = document.getElementById("excNum");
   const wordNum = document.getElementById("wordNum");
