@@ -61,7 +61,7 @@
     }*/
     // generate random array of colors
     const colorArr = dispWords.map(() => {
-      return `hsl(${Math.random() * 360}, 70%, 60%)`;
+      return `hsl(${Math.random() * 360}, 75%, 50%)`;
       }
     );
     /*while (chartSection.firstChild) {
