@@ -63,7 +63,7 @@
     newWord1.innerText = "Word count: " + wordArr.length + " word" + (wordArr.length !== 1 ? "s" : "");
     wordList.appendChild(newWord1);
     const newWord2 = document.createElement('li');
-    newWord2.innerText = "Unique word Count: " + frq.length + " word" + (frq.length !== 1 ? "s" : "");
+    newWord2.innerText = "Unique word count: " + frq.length + " word" + (frq.length !== 1 ? "s" : "");
     wordList.appendChild(newWord2);
     }
     /*for (let i = 0; i < numWord && i < frq.length; ++i) {
