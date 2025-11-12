@@ -60,21 +60,6 @@
       dispFrq[i] = frq[i][1];
     }*/
     // generate random array of colors
-    /*const colorArr = [];
-    for (let i = 0; i < frq.length; ++i) {
-      colorArr[i] = colorPos[Math.floor(Math.random() * 4)];
-      if (i > 0) {
-        while (colorArr[i] == colorArr[i - 1]) {
-          colorArr[i] = colorPos[Math.floor(Math.random() * 4)];
-        }
-      }
-      if (i > 1) {
-        while (colorArr[i] == colorArr[i - 1] ||
-          colorArr[i] == colorArr[i - 2]) {
-          colorArr[i] = colorPos[Math.floor(Math.random() * 4)];
-        }
-      }
-    }*/
     const colorArr = dispWords.map(() => {
       return `hsl(${Math.random() * 360}, 70%, 60%)`;
       }
