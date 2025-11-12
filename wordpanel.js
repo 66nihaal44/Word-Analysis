@@ -5,6 +5,7 @@
   const excFunc = document.getElementById("excFunc");
   const excNum = document.getElementById("excNum");
   const wordNum = document.getElementById("wordNum");
+  const wordList = document.getElementById("wordList");
   const chartSection = document.getElementsByClassName("chartSection")[0];
   let excluFu = excFunc.checked;
   let excluNu = excNum.checked;
@@ -19,6 +20,9 @@
   //const frqList = document.querySelector(`#frqList`);
   function calcFrq(text) {
     console.log("calcFrq function called.");
+    while (wordList.firstChild) {
+      wordList.removeChild(wordList.firstChild);
+    }
     if (text) {
       /*while(frqList.firstChild){
         frqList.removeChild(frqList.firstChild);
@@ -55,6 +59,13 @@
         dispFrq[index] = item[1];
       }
     });
+    const newWord1 = document.createElement('li');
+    newWord1.innerText = "Word count: " + wordArr.length + " word" + (wordArr.length !== 1 ? "s" : "");
+    wordList.appendChild(newWord1);
+    const newWord2 = document.createElement('li');
+    newWord2.innerText = "Unique word Count: " + frq.length + " word" + (frq.length !== 1 ? "s" : "");
+    wordList.appendChild(newWord2);
+    }
     /*for (let i = 0; i < numWord && i < frq.length; ++i) {
       dispWords[i] = frq[i][0];
       dispFrq[i] = frq[i][1];
