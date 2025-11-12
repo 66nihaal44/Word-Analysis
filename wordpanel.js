@@ -142,38 +142,20 @@
   }
   document.addEventListener('DOMContentLoaded', function () {
     excFunc.addEventListener('change', function () {
-      // check if 'change' is right for checkbox
       excluFu = excFunc.checked;
       getFrq();
       showFrq();
-      /*chrome.runtime.sendMessage({
-        action: 'excFunc',
-        data: excluFu
-      });*/
       chrome.storage.session.set({ excluFu: excluFu });
     });
-  });
-  document.addEventListener('DOMContentLoaded', function () {
     excNum.addEventListener('change', function () {
-      // check if 'change' is right for checkbox
       excluNu = excNum.checked;
       getFrq();
       showFrq();
-      /*chrome.runtime.sendMessage({
-        action: 'excNum',
-        data: excluNu
-      });*/
       chrome.storage.session.set({ excluNu: excluNu });
     });
-  });
-  document.addEventListener('DOMContentLoaded', function () {
     wordNum.addEventListener('change', function () {
       numWord = wordNum.value;
       showFrq();
-      /*chrome.runtime.sendMessage({
-        action: 'wordNum',
-        data: numWord
-      });*/
       chrome.storage.session.set({ numWord: numWord });
     });
   });
