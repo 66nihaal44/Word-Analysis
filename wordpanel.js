@@ -75,8 +75,9 @@
         }
       }
     }*/
-    const colorArr = dispWords.map(() =>
-      `hsl(${Math.random() * 360}, 70%, 60%)`
+    const colorArr = dispWords.map(() => {
+      return `hsl(${Math.random() * 360}, 70%, 60%)`;
+      }
     );
     /*while (chartSection.firstChild) {
       chartSection.removeChild(chartSection.firstChild);
