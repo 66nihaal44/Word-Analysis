@@ -72,6 +72,9 @@
               gridLines: {
                 display: false
               },
+              ticks: {
+                display: false
+              },
               scaleLabel: {
                 display: true,
                 labelString: "Sentences"
