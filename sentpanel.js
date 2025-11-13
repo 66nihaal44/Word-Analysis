@@ -95,6 +95,11 @@
               }
             }]
           },
+          layout: {
+            padding: {
+              right: 10
+            }
+          },
           title: {
             display: true,
             text: "Sentences and Word Count",
