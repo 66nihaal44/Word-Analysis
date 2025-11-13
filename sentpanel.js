@@ -44,7 +44,7 @@
       sentArrSorted = [...sentArr];
       sentArrSorted.sort(function (a, b) { return b - a });
     }*/
-    chartLabels = new Array(sentArr.length).fill("");
+    const chartLabels = sentArr.map(() => { return ""; });
     while (chartSection.firstChild) {
       chartSection.removeChild(chartSection.firstChild);
     }
