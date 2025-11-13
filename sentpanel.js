@@ -33,7 +33,7 @@
     }*/
     if (sentArr.length > 1) {
       const newSent1 = document.createElement('li');
-      newSent1.innerText = "Average word count: " + sentAv.toFixed(1) + " word" + (sentAv !== 1 ? "s" : "");
+      newSent1.innerText = "Average word count: " + Math.round(sentAv * 10)/10 + " word" + (sentAv !== 1 ? "s" : "");
       sentList.appendChild(newSent1);
       const newSent2 = document.createElement('li');
       newSent2.innerText = sentArr.length + " sentence" + (sentArr.length !== 1 ? "s" : "");
