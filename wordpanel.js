@@ -20,9 +20,6 @@
   //const frqList = document.querySelector(`#frqList`);
   function calcFrq(text) {
     console.log("calcFrq function called.");
-    while (wordList.firstChild) {
-      wordList.removeChild(wordList.firstChild);
-    }
     if (text) {
       /*while(frqList.firstChild){
         frqList.removeChild(frqList.firstChild);
@@ -59,6 +56,9 @@
         dispFrq[index] = item[1];
       }
     });
+    while (wordList.firstChild) {
+      wordList.removeChild(wordList.firstChild);
+    }
     const newWord1 = document.createElement('li');
     newWord1.innerText = "Word count: " + wordArr.length + " word" + (wordArr.length !== 1 ? "s" : "");
     wordList.appendChild(newWord1);
