@@ -144,7 +144,7 @@
      newFrq.innerText = frq[i][0] + ": " + frq[i][1];
      frqList.appendChild(newFrq);
      }*/
-  }
+  };
   document.addEventListener('DOMContentLoaded', function () {
     excFunc.addEventListener('change', function () {
       excluFu = excFunc.checked;
