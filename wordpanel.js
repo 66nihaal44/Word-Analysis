@@ -171,7 +171,7 @@
     if (changes['hlText']) {
       calcFrq(changes['hlText'].newValue);
     }
-  })
+  });
   chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.action === 'excFunc') {
       excluFu = message.data;
