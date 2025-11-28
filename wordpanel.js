@@ -10,8 +10,8 @@
   let excluFu = excFunc.checked;
   let excluNu = excNum.checked;
   let numWord = wordNum.value;
-  // "the", "a", "an", "and", "of", "is", "to", "that", "this", "for"
-  let functionWords = []; //incomplete list
+  //let functionWords = ["the", "a", "an", "and", "of", "is", "to", "that", "this", "for"]; incomplete list
+  let functionWords = [];
   let frqChartChart;
   document.getElementsByClassName("controls")[0].style.display = "none";
   document.getElementById("frqChart").style.display = "none";
