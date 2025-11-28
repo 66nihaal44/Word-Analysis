@@ -65,7 +65,6 @@
     const newWord2 = document.createElement('li');
     newWord2.innerText = "Unique word count: " + frq.length + " word" + (frq.length !== 1 ? "s" : "");
     wordList.appendChild(newWord2);
-    }
     /*for (let i = 0; i < numWord && i < frq.length; ++i) {
       dispWords[i] = frq[i][0];
       dispFrq[i] = frq[i][1];
