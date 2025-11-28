@@ -188,4 +188,7 @@
       wordNum.value = message.data;
     }
   });
+  fetch(chrome.runtime.getURL('functionWords.json')
+       ).then((res) => {return res.json()}
+       ).then(list => {functionWords = list});
 })();
